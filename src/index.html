@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Robogator cosmos</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
 </head>
-
-<body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
+<body class="mainColor mainTextColor">
+	<div id="viewport">	
+		<div class="spacer"></div>
+		<div id="search" class=" hidden search_container search_small mainSecondColor mainTextColor">
+			<input type="text" class="search_field mainSecondColor mainTextColor search_field_padding_small" id="searchField" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="">
+			<div id="icon"></div>
+			<div id="indicator" class="indicator_off"></div>
+			<div id="magnifier"></div>
+			<div id="found" class="mainSecondColor mainTextDisabledColor found_container"><div id="nothing" class="found_nothing"></div></div>
+		</div>
+		<div id="links" class="hidden">
+			<a href="https://robogator.io" class="styled-link robogatorLink" target="_blank">Robogator</a>
+			<a href="https://wiki.robogator.io" class="styled-link robogatorLink" target="_blank">Wiki</a>
+			<a href="https://community.robogator.io" class="styled-link robogatorLink" target="_blank">Community</a>
+			<a href="https://updates.robogator.io" class="styled-link robogatorLink" target="_blank">Updates</a>
+			<a href="https://license.robogator.io" class="styled-link robogatorLink" target="_blank">License</a>
+			<a href="https://guideline.robogator.io" class="styled-link robogatorLink" target="_blank">Guideline</a>
+		</div>
+	    <div class="hidden flex">
+	        <h1 class ="mainTextColor">Explore an almost infinite number of certified ready-made automation tasks for your Robogator platform</h1>
+	    </div>
+		<div id="list" class="hidden container mainSecondColor">
+			<p id="title" class ="mainTextColor container_title"></p>
+			<div id="accounts"></div>
+			<p id="info" class ="mainTextColor container_title_tags"></p>
+			<div id="tags"></div>
+		</div>
+		<footer class="hidden">
+			<figure><a href="https://robogator.io" target="_blank" class="robogatorLink"><div id="footer"></div></a></figure>
+			<p id= "terms" class="mainTextDisabledColor" >&copy; Robogator cosmos</p>
+			<p><a href="https://policies.robogator.io" target="_blank" class="mainTextDisabledColor robogatorLink" >Privacy policy</a><span class="mainTextDisabledColor"> | </span><a href="https://help.robogator.io" target="_blank" class="mainTextDisabledColor robogatorLink" >Help</a></p>
+			<div class="spacer"></div>
+		</footer>
+	</div>
+	<div id="wall" class="mainColor curtain">
+		<div id="logo" class="loading"></div>
+	</div>
+	<div id="description" class="mainColor fast_fade_in flv">
+		<div id="back" class="account_fullview_back flv">
+			<p id="backButton" class ="account_fullview_back_button flv"></p>
+		</div>
+		<div id="account" class="mainSecondColor fullview_container flv">
+			<p id="titleFullview" class ="mainTextColor container_title flv"></p>
+			<div id="accountFullview" class="account_fullview_frame flv"></div>
+		</div>
+		<div class="description_footer">
+			<figure><a href="https://robogator.io" target="_blank" class="robogatorLink"><div id="footerDescription"></div></a></figure>
+			<p id="termsDescription" class="mainTextDisabledColor" >&copy; Robogator cosmos</p>
+			<p class="footer"><a href="https://policies.robogator.io" target="_blank" class="mainTextDisabledColor robogatorLink" >Privacy policy</a><span class="mainTextDisabledColor"> | </span><a href="https://help.robogator.io" target="_blank" class="mainTextDisabledColor robogatorLink" >Help</a></p>
+			<div class="spacer"></div>
+		</div>
+	</div>
 </body>
-
+<script src="js/cosmos.js"></script>
+<script src="js/fuse.js"></script>
 </html>
