@@ -1,21 +1,509 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
+	@media screen and (min-width: 1200px) {
+		h1 {
+			font-size: 54px !important;
+		}
+	}
+	body {
+    font-family: 'Segoe UI', "Figtree";
+		margin: 0;
+		padding: 20px 15px;
+	}
+	#viewport{
+		margin: auto;
+		width: 100%;
+		overflow: hidden;
+	}
+	#description {
+		margin: auto;
+		height: 100%;
+		display: none;
+	}
+	#termsDescription {
+		text-align: center;
+		font-size: 14px;
+	}
+	#indicator{
+		height: 6px;
+		width: 6px;
+		top: 27px;
+		right: 52px;
+		border-radius: 3px;
+		position: absolute;
+	}
+	#magnifier{
+		height: 18px;
+		width: 18px;
+		top: 21px;
+		right: 21px;	
+		position: absolute;
+		line-height: normal;
+	}
+	#icon{
+		height: 42px;
+		width: 42px;
+		top: 9px;
+		left: 9px;
+		position: absolute;
+	}
+	#links{
+		position: relative;
+		max-width: 600px;
+		margin: auto;
+		margin-top: 10px;
+		text-align: center;
+	}
+	#footer {
+		height: 256px;
+		width: 256px;
+		margin: auto;
+	}
+	#footerDescription {
+		height: 256px;
+		width: 256px;
+		margin: auto;
+	}
+	.curtain{
+		position: fixed; /* Stays over everything */
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+	}
+	.container {
+		margin: auto;
+		padding: 0 20px 20px;
+		margin-top: 90px;
+		margin-bottom: 60px;
+		border-radius: 15px;
+		max-width: 660px;
+		word-break: break-word;
+	}
+	.fullview_container {
+		margin: auto;
+		padding: 0 20px 20px;
+		margin-bottom: 60px;
+		border-radius: 15px;
+		max-width: 660px;
+		word-break: break-word;
+	}
+	.container_title{
+		font-size: 16px;
+		padding: 25px 25px 0;
+	}
+	.container_title_tags{
+		font-size: 16px;
+		padding: 25px 25px 0;
+		margin-bottom: calc(1em - 10px);
+	}
+	h1 {
+		margin: auto;
+		text-align: center;
+		font-size: calc(1.375rem + 2.6vw);
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 60px;
+		font-weight: normal;
+		max-width: 1064px;
+	}
+	figure {
+		text-align: center;
+	}
+	footer p {
+		text-align: center;
+		font-size: 14px;
+	}
+	.footer {
+		text-align: center;
+		font-size: 14px;
+	}
+	.flex p {
+		text-align: center;
+		font-size: 18px;
+		padding-left: 60px;
+		padding-right: 60px;
+		padding-bottom: 30px;
+	}
+	.search_container{
+		transition: all 0.3s ease-in-out;
+		overflow: hidden;
+		position: relative;
+	}
+	.search_field{
+		font-family: 'Segoe UI', "Figtree";
+		border: none;
+		outline: none;
+		margin-bottom: 0;
+		height: 60px;
+		line-height: 60px;
+		font-size: 16px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	input {
+		--placeholder-color: transparent; /* Default color */
+	  }
+	input::placeholder {
+		color: var(--placeholder-color);
+	}
+	.styled-link {
+		color: currentColor; /* Default text color */
+		text-decoration: none; /* Removes underline */
+		padding: 10px 20px;
+		font-size: 14px;
+		display: inline-block;
+	}
+	.styled-link:hover {
+		color: currentColor; /* Changes color when hovered */
+		text-decoration: none; /* Removes underline */
+	}
+	.styled-link:active {
+		color: currentColor; /* Changes color when clicked */
+		text-decoration: none; /* Removes underline */
+	}
+	.styled-link:visited {
+		color: currentColor; /* Changes color for visited links */
+		text-decoration: none; /* Removes underline */
+	}
+	.indicator_on{
+		background-color: #f76100;
+	}
+	.indicator_off{
+		background-color: transparent;
+	}
+	.search_field_padding_small{
+		padding: 0 25px;
+	}
+	.search_field_padding_large{
+		padding: 0 50px 0 35px;
+	}
+	.search_small{
+		height: 60px;
+		padding: 0 30px;
+		border-radius:30px;
+		line-height: 60px;
+		max-width: 600px;
+		margin: auto;
+	}
+	.search_large{
+		padding : 0 20px;
+		border-radius: 13px;
+		line-height: 60px;
+		max-width: 660px !important;
+		margin: auto;
+    	height: 180px;
+	}
+	.found_container{
+		margin-bottom: 20px;
+		line-height: normal;
+		min-height: 60px;
+	}
+	.found_nothing{
+		width: 100%;
+		text-align: center;
+		font-size: 16px;
+	}
+	.spacer{
+		height: 30px;
+	}
+	.account_standard_container{
+		padding: 25px 30px 15px 30px;
+		border-radius: 15px;
+		margin-bottom: 15px;
+		position: relative;
+	}
+	.account_standard_image{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 68px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		background-size: cover;
+		background-position: 50% 37%;
+		cursor: pointer;
+	}
+	.account_standard_certificate{
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		height: 38px;
+		width: 38px;
+		border-radius: 19px;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 38px; 
+		cursor: pointer;
+	}
+	.account_standard_certificate_background{
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		height: 38px;
+		width: 38px;
+		border-radius: 19px;
+		cursor: pointer;
+	}
+	.account_standard_title{
+		margin-top: 64px;
+		font-size: 26px;
+	}
+	.account_standard_description{
+		margin-top: 10px;
+		margin-bottom: 15px;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	.account_standard_download{
+		border-radius: 19px 0 0 19px;
+		padding: 0 41px 0 44px;
+		height: 38px;
+		line-height: 38px;
+		position: absolute;
+		top: 15px;
+		right: -20px;
+		font-size: 14px;
+		overflow: hidden;
+		cursor: pointer;
+		transition: width 0.3s ease-in-out;
+	}
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
-}
+	.account_standard_download_large{
+		width: 90px;
+	}
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
-}
+	.account_standard_download_small{
+		width: 50px;
+	}
 
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
-}
+	.account_standard_download_image{
+		height: 20px;
+		width: 20px;
+		position: absolute;
+		top: 9px;
+		left: 16px;
+		line-height: normal;
+	}
+	.account_standard_download_progress{
+		padding-left: 3px;
+	}
+	.tag_standard_container{
+		position: relative;
+	}
+	.tag_license_image{
+		display: inline-block;
+		position: absolute;
+		cursor: pointer;
+		height: 20px;
+		width: 20px;
+		left: 21px;
+	}
+	.tag_license{
+		padding: 10px 21px 10px 49px;
+		border-radius: 0 19px 19px 0;
+		left: -21px;
+		Top: 0;
+		position: relative;
+		height: 18px;
+		cursor: pointer;
+		font-size: 14px; 
+		line-height: 18px;
+		display: inline-block;
+	}
+	.account_standard_license{
+		position: relative;
+		margin-top: 10px;
+		height: 38px;
+	}
+	.tag{
+		padding: 10px 21px 10px;
+		height: 18px;
+		cursor: pointer;
+		border-radius: 19px;
+		font-size: 14px; 
+		line-height: 18px;
+		margin-right: 10px;
+		margin-top: 10px;
+		display: inline-block;
+		position: relative;
+	}
+	.share{
+		left: -21px;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin-right: 0 !important;
+	}
+	.account_fullview_container{
+		padding: 25px 25px 15px 25px;
+		border-radius: 15px 15px 0 0;
+		margin-bottom: 5px;
+		height: 200px;
+		position: relative;
+	}
+	.account_fullview_container_middle{
+		padding: 25px 20px 15px 20px;
+		margin-bottom: 5px;
+		position: relative;
+	}
+	.account_fullview_container_end{
+		padding: 15px 30px 15px 30px;
+		border-radius: 0 0 15px 15px;
+		margin-bottom: 15px;
+		position: relative;
+	}
+	.account_fullview_container_annex{
+		padding: 0 25px;
+		margin-bottom: 15px;
+		position: relative;
+	}
+	.account_fullview_image{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		background-size: cover;
+		background-position: 50% 37%;
+	}
+	.account_fullview_sub_title{
+		font-size: 16px;
+		margin-top: 10px;
+		padding: 15px;
+	}
+	.account_fullview_description{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 30px;
+		border-radius: 24px;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	.account_fullview_parameter{
+		font-size: 14px;
+		border-radius: 0 24px 24px 0;
+		position: relative;
+		padding: 15px 25px 15px 45px;
+		left: -30px;
+		margin-bottom: 15px;
+		line-height: 1.5;
+		display: inline-block;
+	}
+	.account_fullview_parameter_default{
+		border-radius: 14px;
+		min-height: 24px;
+		line-height: 24px;
+		display: inline-block;
+		padding: 2px 15px;
+		margin-left: 10px;
+		margin-top: 5px;
+	}
+	.account_fullview_followed_by{
+		border-radius: 14px;
+		min-height: 24px;
+		line-height: 24px;
+		display: inline-block;
+		padding: 2px 15px;
+	}
+	.account_fullview_parameter_title{
+		font-size: 14px;
+		margin-top: 25px;
+		margin-bottom: 15px;
+		padding-left: 15px;
+	}
+	.account_fullview_item{
+		font-size: 14px;
+		padding-left: 15px;
+		display: inline-block;
+	}
+	.account_fullview_type{
+		font-size: 14px;
+		display: inline-block;
+		position: relative;
+    	left: 30px;
+	}
+	.account_fullview_license{
+		position: relative;
+		margin-top: 84px;
+		height: 38px;
+	}
+	.account_fullview_idKey{
+		margin-top: 25px;
+		font-size: 14px;
+	}
+	.account_fullview_back{
+		margin: auto;
+		padding: 20px 20px 0 20px;
+		border-radius: 15px;
+		max-width: 660px;
+		word-break: break-word;
+			font-size: 14px;
+	}
+	.account_fullview_back_button{
+		padding: 0 25px 5px; 
+		cursor: pointer;
+	}
+	.hidden{
+		visibility: hidden;
+	}
+	.visible {
+		visibility: visible;
+		opacity: 1;
+		animation-name: fadeInOpacity;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in;
+		animation-duration: 0.3s;
+	}
+	.fast_fade_in {
+		opacity: 1;
+		animation-name: fadeInOpacity;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in;
+		animation-duration: 0.1s;
+	}
+	.fast_fade_out {
+		opacity: 0;
+		animation-name: fadeOutOpacity;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-out;
+		animation-duration: 0.1s;
+	}
+	.loading{
+		height: 512px;
+		width: 512px;
+		top: 50%;
+		left: 50%;
+		margin-left: -256px;
+		margin-top: -256px; 
+		position: relative;
+		animation: loading 2s ease;
+        -webkit-animation: loading 2s ease;
+	}
+	@keyframes fadeInOpacity {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes fadeOutOpacity {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	@keyframes loading {
+		from{transform:scale(0)}
+		to{transform:scale(1)}
+	}
+	@-webkit-keyframes loading {
+		from{-webkit-transform:scale(0)}
+		to{-webkit-transform:scale(1)}
+	}
