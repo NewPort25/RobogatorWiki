@@ -20,11 +20,11 @@ const licenseStandard = "Beginners & Masters";
 const licenseExecutive = "For Masters only";
 
 const searchPlaceholder = "Search wiki";
-const newestPlaceholder = "Newest available automation tasks";
-const searchByTagsPlaceholder = "Search automation tasks by tags";
+const newestPlaceholder = "Newest available wiki articles";
+const searchByTagsPlaceholder = "Search by topic";
 const backPlaceholder ="Back to wiki";
-const backMorePlaceholder ="See more available automation tasks";
-const foundByTagPlaceholder = "All Accounts with tag ";
+const backMorePlaceholder ="See more available wiki articles";
+const foundByTagPlaceholder = "All wiki articles with topic ";
 const foundNothingPlaceholder = "The cosmos is infinite, Robogator couldn't find anything near enough to match your search term by now. There must be something many light years away, for sure.";
 const startTypingPlaceholder = "What are you looking for...";
 
