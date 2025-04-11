@@ -108,9 +108,7 @@ document.getElementById("back").style.color = styleHighlight;
 
 loadCSS("styles/" + styleTheme + ".css"); // Replace with your CSS file path
 
-// Add logo
-document.getElementById("logo").innerHTML = svgCosmos(styleHighlight,512,512);
-document.getElementById("icon").innerHTML = svgCosmos(styleHighlight,42,42);
+
 
 if(licenseType == 1){
     setFaviconFromSVG(svgLogoExecutive(styleHighlight,128,128));
@@ -118,6 +116,7 @@ if(licenseType == 1){
     document.getElementById("footerDescription").innerHTML = svgLogoExecutive(styleHighlight,256,256);
     document.title += " for Masters";
     document.getElementById("icon").innerHTML = svgLogoExecutive(styleHighlight,30,30);
+    document.getElementById("logo").innerHTML = svgLogoExecutive(styleHighlight,512,512);
 }
     
 if(licenseType == 0){
@@ -126,6 +125,7 @@ if(licenseType == 0){
     document.getElementById("footerDescription").innerHTML = svgLogo(styleHighlight,256,256);
     document.title += " for Beginners";
     document.getElementById("icon").innerHTML = svgLogo(styleHighlight,30,30);
+    document.getElementById("logo").innerHTML = svgLogo(styleHighlight,512,512);
 }
 
 // Add start text
