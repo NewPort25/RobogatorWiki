@@ -2,6 +2,6 @@
   "Titel":"Create a Robogator Chat message",
   "Topic":"C# Scripting",
   "Content":"The preferred way to write to the Robogator Chat with C# is to use the following method: ROBOCODE0 This example above generates a single Robogator Chat message with hello world as content. ROBOIMAGE0",
-  "Images":["create-a-robogator-chat-message.jpg"],
+  "Images":["create-a-robogator-chat-message.png"],
   "Code":["Console.WriteLine(\"Hello world\");"]
 }
