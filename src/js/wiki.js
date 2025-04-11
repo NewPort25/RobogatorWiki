@@ -480,8 +480,8 @@ function loadJson(){
     document.getElementById("backButton").innerHTML = backPlaceholder;
 
     // Load fulltext search
-    const options = {keys: ["Search", "IdKey", "Tags"], threshold: 0.5, }; // Lower threshold means stricter match
-    FUSE = new Fuse(ACCOUNTS, options);
+    const options = {keys: ["Title", "Content", "Topic"], threshold: 0.5, }; // Lower threshold means stricter match
+    FUSE = new Fuse(ARTICLES, options);
 
     // Show all
     document.querySelectorAll(".hidden").forEach(element => {
