@@ -436,7 +436,7 @@ function loadJson(){
     var output = "";
     var tags = [];
     
-    ACCOUNTS.forEach(item => {
+    ARTICLES.forEach(item => {
         
         // Add tag for license type
         if(item.License == 0)
@@ -524,7 +524,7 @@ function loadFullDescription(idKey){
     document.documentElement.scrollTo(0, 0);
 
     
-    ACCOUNTS.forEach(item => {
+    ARTICLES.forEach(item => {
 
         // Just include accounts with the same tag in it
         if(item.IdKey.includes(idKey)){
@@ -580,7 +580,7 @@ function loadAccountsForTagName(tag){
     var output = "";
     var counter = 0;
 
-    ACCOUNTS.forEach(item => {
+    ARTICLES.forEach(item => {
         
         // Just include accounts with the same tag in it
         if(item.Tags.includes(tag)){
