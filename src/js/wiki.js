@@ -1,5 +1,5 @@
 // Account json
-var ACCOUNTS;
+var ARTICLES;
 
 // Fulltext search 
 var FUSE;
@@ -13,16 +13,16 @@ var DESCRIPTION = false;
 const MAXNEWESTCOUNT = 5;
 const MAXSEARCHCOUNT = 10;
 
-const pathToAccounts = "load/accounts.js";
+const pathToAccounts = "load/articles.js";
 const pathToAccountImages = "load/images/";
 
 const licenseStandard = "Beginners & Masters";
 const licenseExecutive = "For Masters only";
 
-const searchPlaceholder = "Search cosmos";
+const searchPlaceholder = "Search wiki";
 const newestPlaceholder = "Newest available automation tasks";
 const searchByTagsPlaceholder = "Search automation tasks by tags";
-const backPlaceholder ="Back to cosmos";
+const backPlaceholder ="Back to wiki";
 const backMorePlaceholder ="See more available automation tasks";
 const foundByTagPlaceholder = "All Accounts with tag ";
 const foundNothingPlaceholder = "The cosmos is infinite, Robogator couldn't find anything near enough to match your search term by now. There must be something many light years away, for sure.";
@@ -117,6 +117,7 @@ if(licenseType == 1){
     document.getElementById("footer").innerHTML = svgLogoExecutive(styleHighlight,256,256);
     document.getElementById("footerDescription").innerHTML = svgLogoExecutive(styleHighlight,256,256);
     document.title += " for Masters";
+    document.getElementById("icon").innerHTML = svgLogoExecutive(styleHighlight,30,30);
 }
     
 if(licenseType == 0){
@@ -124,6 +125,7 @@ if(licenseType == 0){
     document.getElementById("footer").innerHTML = svgLogo(styleHighlight,256,256);
     document.getElementById("footerDescription").innerHTML = svgLogo(styleHighlight,256,256);
     document.title += " for Beginners";
+    document.getElementById("icon").innerHTML = svgLogo(styleHighlight,30,30);
 }
 
 // Add start text
