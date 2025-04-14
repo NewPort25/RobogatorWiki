@@ -401,8 +401,8 @@ function loadJson(){
         } 
 
         // Handle tags -> articel topics
-        if (!tags.includes(tag)) {
-            tags.push(tag); // Add only if not already in the existingTags array
+        if (!tags.includes(item.Topic)) {
+            tags.push(item.Topic); // Add only if not already in the existingTags array
         }
 
         // Sort A - Z
