@@ -223,7 +223,14 @@
 		border-top-right-radius: 15px;
 		background-size: cover;
 		background-position: 50% 37%;
-		cursor: pointer;
+		text-align: center;
+
+	}
+	.account_standard_code{
+		display: inline-block;
+		font-size: 14px;
+		line-height: 1.5;
+		font-family: monospace !important;
 	}
 	.account_standard_certificate{
 		position: absolute;
