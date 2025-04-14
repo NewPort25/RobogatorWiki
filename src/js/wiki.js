@@ -161,7 +161,7 @@ function loadCSS(url) {
     };
 }
 
-function accountStandard(id,title,topic,content,images,code,view){
+function articleStandard(id,title,topic,content,images,code,view){
 
     // Set font color for code
     var codeColor = COLORCSHARP;
@@ -171,7 +171,7 @@ function accountStandard(id,title,topic,content,images,code,view){
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = "";
-    if(view == "search"){
+    if(view == "search" || view == "tags"){
         // Short text
         formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
     } else {
@@ -331,91 +331,6 @@ function loadTags(tagsJson){
     return html;
 }
 
-function download(idKey,view){
-
-    // Stops bubbling
-    event.stopPropagation(); 
-
-    // Just download if on an win machine
-    if (navigator.platform.indexOf('Win') !== -1) {
-       
-        const size = 20;
-
-        // Start progress indication
-        const importDiv = document.getElementById(view + "-" + idKey);
-            
-        // Add disabled color
-        if (!importDiv.classList.contains("mainTextDisabledColor")) 
-            importDiv.classList.add("mainTextDisabledColor");
-
-        // Delete style
-        if (importDiv.getAttribute('style') !== null) 
-            importDiv.removeAttribute('style');
-
-        // Get disabled color
-        const style = getComputedStyle(importDiv);
-        importDiv.style.color = style.color;
-    
-        // Add new width
-        if (importDiv.classList.contains("account_standard_download_small")) 
-            importDiv.classList.replace("account_standard_download_small","account_standard_download_large");
-
-        // Disable image
-        importDiv.innerHTML = '<div class="account_standard_download_image" onclick="download(\'' + idKey + '\')" >' + svgImport(style.color,size,size) + '</div>Import <span class="mainTextColor account_standard_download_progress progress-' + idKey + '">0%</span></div>';
-
-        const importTimers = document.querySelectorAll(".progress-" + idKey);
-        const startTime = Date.now();
-
-        // Start uploading animations
-        const interval = setInterval(() => {
-            const duration = Math.floor(Math.random() * (3000 - 1500 + 1)) + 1500;
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const percent = Math.floor(progress * 100);
-        
-            importTimers.forEach(div => {
-                div.textContent = percent + '%';
-            });
-            
-            if (progress === 1) {
-                clearInterval(interval);
-
-                // Remove disabled color
-                if (!importDiv.classList.contains("mainTextDisabledColor")) 
-                    importDiv.classList.remove("mainTextDisabledColor");
-
-                // Add highlight color text
-                importDiv.style.color = styleHighlight;
-
-                // Add highlight color image and deisabled progress
-                importDiv.innerHTML = '<div class="account_standard_download_image" onclick="download(\'' + idKey + '\')" >' + svgImport(styleHighlight,size,size) + '</div>Import <span class="mainTextDisabledColor account_standard_download_progress" >100%</span></div>';
-
-                setTimeout(() => {
-                    if(importDiv){
-
-                        // Remove disabled progress
-                        importDiv.innerHTML = '<div class="account_standard_download_image" onclick="download(\'' + idKey + '\')" >' + svgImport(styleHighlight,size,size) + '</div>Import</div>';
-
-                        // Add new width auto
-                        if (importDiv.classList.contains("account_standard_download_large")) 
-                            importDiv.classList.replace("account_standard_download_large","account_standard_download_small");
-
-                    }
-                }, 8000); // 8000ms = 5 seconds 
-            }
-        }, 50); 
-
-        // Robogator deeplink to desktop app
-        window.location.href = "robogator://open?idKey=" + idKey;
-
-    }
-    else
-    {
-        // No win platform detected
-        alert("Available on Windows desktop only");
-    }
-}
-
 function loadJson(){
 
     // Scroll to top
@@ -429,7 +344,7 @@ function loadJson(){
         
         // Show just newest accounts
         if(counter < MAXNEWESTCOUNT){
-            output += accountStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code);
+            output += articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code);
             counter++;
         } 
 
@@ -587,7 +502,7 @@ function loadAccountsForTagName(tag){
         
         // Just include accounts with the same tag in it
         if(item.Topic.includes(tag)){
-            output +=  accountStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,"tag");
+            output +=  articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,"tag");
             counter++;
         }
     
@@ -617,7 +532,7 @@ function loadAccountsForSearchInput(){
         // Returns matching documents
         result.forEach(r => {
             if(counter < MAXSEARCHCOUNT){
-                output +=  accountStandard(r.item.Id,r.item.Title,r.item.Topic,r.item.Content,r.item.Images,r.item.Code,"search");
+                output +=  articleStandard(r.item.Id,r.item.Title,r.item.Topic,r.item.Content,r.item.Images,r.item.Code,"search");
                 counter++;
             }
         });
