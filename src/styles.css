@@ -224,34 +224,15 @@
 		background-size: cover;
 		background-position: 50% 37%;
 		text-align: center;
+		display: flex;
+		align-items: center;  /* Vertical centering */
+		justify-content: center; /* Horizontal centering (optional) */
 	}
 	.account_standard_code{
 		display: inline-block;
 		font-size: 14px;
 		line-height: 1.5;
 		font-family: monospace !important;
-	}
-	.account_standard_certificate{
-		position: absolute;
-		top: 15px;
-		left: 15px;
-		height: 38px;
-		width: 38px;
-		border-radius: 19px;
-		font-size: 10px;
-		font-weight: bold;
-		text-align: center;
-		line-height: 38px; 
-		cursor: pointer;
-	}
-	.account_standard_certificate_background{
-		position: absolute;
-		top: 15px;
-		left: 15px;
-		height: 38px;
-		width: 38px;
-		border-radius: 19px;
-		cursor: pointer;
 	}
 	.account_standard_title_small{
 		margin-top: 0px;
