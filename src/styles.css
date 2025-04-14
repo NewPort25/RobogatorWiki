@@ -248,7 +248,6 @@
 		cursor: pointer;
 	}
 	.account_standard_title{
-		margin-top: 64px;
 		font-size: 26px;
 	}
 	.account_standard_description{
@@ -331,7 +330,6 @@
 		position: relative;
 	}
 	.share{
-		left: -21px;
 		padding-left: 0 !important;
 		padding-right: 0 !important;
 		margin-right: 0 !important;
