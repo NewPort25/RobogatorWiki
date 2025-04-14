@@ -25,7 +25,7 @@ const licenseStandard = "Beginners & Masters";
 const licenseExecutive = "For Masters only";
 
 const searchPlaceholder = "Search wiki";
-const newestPlaceholder = "Newest available wiki articles";
+const newestPlaceholder = "Newest available wiki article";
 const searchByTagsPlaceholder = "Search by topic";
 const backPlaceholder ="Back to wiki";
 const backMorePlaceholder ="See more available wiki articles";
