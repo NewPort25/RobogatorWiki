@@ -564,7 +564,7 @@ function loadAccountsForTagName(tag){
     ARTICLES.forEach(item => {
         
         // Just include accounts with the same tag in it
-        if(item.Tags.includes(tag)){
+        if(item.Topic.includes(tag)){
             output +=  accountStandard(r.item.Id,r.item.Title,r.item.Topic,r.item.Content,r.item.Images,r.item.Code,"tag");
             counter++;
         }
