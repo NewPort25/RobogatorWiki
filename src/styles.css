@@ -211,6 +211,7 @@
 		border-radius: 15px;
 		margin-bottom: 15px;
 		position: relative;
+		cursor: pointer;
 	}
 	.account_standard_image{
 		position: absolute;
@@ -249,27 +250,6 @@
 		margin-bottom: 15px;
 		font-size: 14px;
 		line-height: 1.5;
-	}
-	.account_standard_download{
-		border-radius: 19px 0 0 19px;
-		padding: 0 41px 0 44px;
-		height: 38px;
-		line-height: 38px;
-		position: absolute;
-		top: 15px;
-		right: -20px;
-		font-size: 14px;
-		overflow: hidden;
-		cursor: pointer;
-		transition: width 0.3s ease-in-out;
-	}
-
-	.account_standard_download_large{
-		width: 90px;
-	}
-
-	.account_standard_download_small{
-		width: 50px;
 	}
 	.account_standard_preview{
 		position: absolute;
