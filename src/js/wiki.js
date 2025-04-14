@@ -206,7 +206,7 @@ function articleStandard(id,title,topic,content,images,code,view){
     return html;
 }
 
-function accountFullsize(id,title,topic,content,images,code,view){
+function articleFullsize(id,title,topic,content,images,code,view){
 
     // Set font color for code
     var codeColor = COLORCSHARP;
@@ -353,7 +353,7 @@ function loadFullDescription(idKey){
         // Just include accounts with the same tag in it
         if(item.IdKey.includes(idKey)){
             title = item.Title;
-            output = accountFullsize(item.IdKey,item.Title,item.Children,item.Tags,item.Certificate,item.License,"full");
+            output = articleFullsize(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code);
         }
     
     });
