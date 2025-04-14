@@ -542,7 +542,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
 
     // Show image
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="mainThirdColor account_standard_image_panel"><img src="'+ 
-        pathToArticleImages image[number]  + '" ></div>'});
+        pathToArticleImages + image[number]  + '" ></div>'});
 
     return text;
 }
