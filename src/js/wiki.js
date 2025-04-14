@@ -165,7 +165,7 @@ function accountStandard(id,title,topic,content,images,code,view){
 
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
-         '<div class="mainThirdColor account_standard_image" style="background-image: url(\'' + pathToAccountImages + idKey + '.jpg\');"></div>' +
+         '<div class="mainThirdColor account_standard_image" style="background-image: url(\'' + pathToAccountImages + '.jpg\');"></div>' +
          '<div class="account_standard_title">' + title + '</div>' +
          '<div class="account_standard_description">' + formatedContent + '</div>' +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
