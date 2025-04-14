@@ -177,7 +177,7 @@ function accountStandard(id,title,topic,content,images,code,view){
     var divHeaderBackground = "";
     if(code.length > 0 && view == "search"){
         divTitleClass = "account_standard_title_large";
-        divHeaderBackground = '<div class="account_standard_image"><div class="account_standard_code" style="color: ' + codeColor + '; background-color:' + COLORCODEBG + ';" >' + code[0] + '</div></div>'
+        divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
     }
 
     // Check share button
