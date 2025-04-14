@@ -595,7 +595,7 @@ function loadAccountsForSearchInput(){
         // Returns matching documents
         result.forEach(r => {
             if(counter < MAXSEARCHCOUNT){
-                output +=  accountStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,"search");
+                output +=  accountStandard(r.Id,r.Title,r.Topic,r.Content,r.Images,r.Code,"search");
                 counter++;
             }
         });
