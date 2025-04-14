@@ -170,13 +170,13 @@ function accountStandard(id,title,topic,content,images,code,view){
 
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
-    var formatedContent = ""
+    var formatedContent = "";
     if(view == "search"){
         // Short text
-        replaceRobogatorPlaceholdersWithEllipsis(content);
+        formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
     } else {
         // Rich text
-        replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
+        formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
     }
 
     // Check for code to put it 
