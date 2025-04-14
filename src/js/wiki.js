@@ -165,7 +165,7 @@ function accountStandard(id,title,topic,content,images,code,view){
 
     // Set font color for code
     var codeColor = COLORCSHARP;
-    if(topic == "Powershell")
+    if(topic.includes("Powershell"))
         codeColor = COLORPOWERSHELL;
 
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
