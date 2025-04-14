@@ -172,7 +172,7 @@ function articleStandard(id,title,topic,content,images,code,view){
 
     var formatedContent = "";
     var divFoorerPreview = "";
-    if(view == "search" || view == "tags"){
+    if(view == "search" || view == "tag"){
         // Short text
         formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
         divFoorerPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
