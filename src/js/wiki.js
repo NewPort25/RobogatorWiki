@@ -565,14 +565,14 @@ function loadAccountsForTagName(tag){
         
         // Just include accounts with the same tag in it
         if(item.Tags.includes(tag)){
-            output += accountStandard(item.IdKey,item.Title,item.Description,item.Tags,item.Certificate,item.License,"tag");
+            output +=  accountStandard(r.item.Id,r.item.Title,r.item.Topic,r.item.Content,r.item.Images,r.item.Code,"tag");
             counter++;
         }
     
     });
 
     document.getElementById("title").innerHTML = foundByTagPlaceholder + tag + " (" + counter + ")";
-    document.getElementById("accounts").innerHTML = output;
+    document.getElementById("articles").innerHTML = output;
 
     // Scroll to
     scrollToListTop();
