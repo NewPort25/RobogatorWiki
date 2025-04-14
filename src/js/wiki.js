@@ -192,6 +192,7 @@ function accountStandard(id,title,topic,content,images,code,view){
          '<div class="account_standard_description">' + formatedContent + '</div>' +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
          divFooterShare +
+         '<div class="mainTextDisabledColor account_standard_preview">Preview</div>' +
       '</div>';
     return html;
 }

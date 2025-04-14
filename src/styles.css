@@ -271,17 +271,9 @@
 	.account_standard_download_small{
 		width: 50px;
 	}
-
-	.account_standard_download_image{
-		height: 20px;
-		width: 20px;
+	.account_standard_preview{
 		position: absolute;
-		top: 9px;
-		left: 16px;
-		line-height: normal;
-	}
-	.account_standard_download_progress{
-		padding-left: 3px;
+	
 	}
 	.tag_standard_container{
 		position: relative;
