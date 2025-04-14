@@ -162,15 +162,28 @@ function loadCSS(url) {
 
 function accountStandard(id,title,topic,content,images,code,view){
 
-    var color = styleHighlight;
+    // Set font color for code
+    var codeColor = COLORCSHARP;
+    if(topic == "Powershell")¨
+        codeColor = COLORPOWERSHELL;
+
+
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = replaceRobogatorPlaceholders(content);
 
+    // Check for code to put it in header
+    var divTitleClass = "account_standard_title_small";
+    var divHeaderBackground = "";
+    if(code.length > 0){
+        divTitleClass = "account_standard_title_large";
+        divHeaderBackground = '<div class="mainThirdColor account_standard_image"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
+    }
+
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
-         '<div class="mainThirdColor account_standard_image" style="background-image: url(\'' + pathToAccountImages + '.jpg\');"></div>' +
-         '<div class="account_standard_title">' + title + '</div>' +
+         divHeaderBackground +
+         '<div class="' + divTitleClass  + '">' + title + '</div>' +
          '<div class="account_standard_description">' + formatedContent + '</div>' +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
          '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +

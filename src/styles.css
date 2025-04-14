@@ -247,7 +247,11 @@
 		border-radius: 19px;
 		cursor: pointer;
 	}
-	.account_standard_title{
+	.account_standard_title_small{
+		margin-top: 0px;
+		font-size: 26px;
+	}
+	.account_standard_title_large{
 		margin-top: 64px;
 		font-size: 26px;
 	}
