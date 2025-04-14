@@ -174,10 +174,15 @@ function accountStandard(id,title,topic,content,images,code,view){
     // Check for code to put it in header
     var divTitleClass = "account_standard_title_small";
     var divHeaderBackground = "";
-    if(code.length > 0){
+    if(code.length > 0 && view == "search"){
         divTitleClass = "account_standard_title_large";
         divHeaderBackground = '<div class="mainThirdColor account_standard_image"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
     }
+
+    // Check share button
+    var divFooterShare = '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>';
+    if(view == "search") 
+        divFooterShare = "";
 
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
@@ -185,7 +190,7 @@ function accountStandard(id,title,topic,content,images,code,view){
          '<div class="' + divTitleClass  + '">' + title + '</div>' +
          '<div class="account_standard_description">' + formatedContent + '</div>' +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
-         '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +
+         divFooterShare +
       '</div>';
     return html;
 }
@@ -590,7 +595,7 @@ function loadAccountsForSearchInput(){
         // Returns matching documents
         result.forEach(r => {
             if(counter < MAXSEARCHCOUNT){
-                output += accountStandard(r.item.IdKey,r.item.Title,r.item.Description,r.item.Tags,r.item.Certificate,r.item.License,"search");
+                output +=  accountStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,"search");
                 counter++;
             }
         });
