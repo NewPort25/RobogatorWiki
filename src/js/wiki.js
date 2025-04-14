@@ -410,23 +410,6 @@ function download(idKey,view){
     }
 }
 
-function openGuideline(){
-
-    // Stops bubbling
-    event.stopPropagation();
-
-    // Params
-    const url = new URL("https://guideline.robogator.io");
-    const params = { style: styleTheme, highlight: styleHighlight, license: licenseType }
-
-    // Add new parameters
-    Object.keys(params).forEach(key => url.searchParams.set(key, params[key]));
-
-    // Code that may cause an error
-    window.open(url.toString(), "_blank");
-
-}
-
 function loadJson(){
 
     // Scroll to top
@@ -438,40 +421,26 @@ function loadJson(){
     
     ARTICLES.forEach(item => {
         
-        // Add tag for license type
-        if(item.License == 0)
-            item.Tags.push(licenseStandard);
-
-        if(item.License == 1)
-            item.Tags.push(licenseExecutive);
-
-        // Get Languages
-        item.Languages.forEach(language => {
-            item.Tags.push(language); // Add only if not already in the existingTags array
-        });
-
         // Show just newest accounts
         if(counter < MAXNEWESTCOUNT){
-            output += accountStandard(item.IdKey,item.Title,item.Description,item.Tags,item.Certificate,item.License);
+            output += accountStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code);
             counter++;
         } 
 
-        // Handle tags
-        item.Tags.forEach(tag => {
-            if (!tags.includes(tag)) {
-                tags.push(tag); // Add only if not already in the existingTags array
-            }
-        });
+        // Handle tags -> articel topics
+        if (!tags.includes(tag)) {
+            tags.push(tag); // Add only if not already in the existingTags array
+        }
 
         // Sort A - Z
         tags.sort();
 
     });
 
-    document.getElementById("accounts").innerHTML = output;
+    document.getElementById("articles").innerHTML = output;
 
     // Load json tags
-    document.getElementById("tags").innerHTML = loadTags(JSON.stringify(tags));
+    document.getElementById("topics").innerHTML = loadTags(JSON.stringify(tags));
 
     // Show curtain
     document.getElementById("wall").style.display = "none";
