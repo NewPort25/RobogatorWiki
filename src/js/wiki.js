@@ -171,9 +171,11 @@ function articleStandard(id,title,topic,content,images,code,view){
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = "";
+    var divFoorerPreview = "";
     if(view == "search" || view == "tags"){
         // Short text
         formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
+        divFoorerPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
     } else {
         // Rich text
         formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
@@ -199,7 +201,7 @@ function articleStandard(id,title,topic,content,images,code,view){
          '<div class="account_standard_description">' + formatedContent + '</div>' +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
          divFooterShare +
-         '<div class="mainTextDisabledColor account_standard_preview">Preview</div>' +
+         divFooterPreview +
       '</div>';
     return html;
 }
