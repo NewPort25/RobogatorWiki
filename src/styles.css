@@ -274,7 +274,9 @@
 	.account_standard_preview{
 		position: absolute;
 		font-size: 14px;
-
+		height: 18px;
+		line-height: 18px;
+		right: 30px;
 	}
 	.tag_standard_container{
 		position: relative;
