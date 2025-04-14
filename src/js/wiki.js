@@ -491,9 +491,17 @@ function loadFullDescription(idKey){
 }
 
 function replaceRobogatorPlaceholders(text) {
-    return text
-        .replace(/ROBOCODE\d+/g, ' ... ')
-        .replace(/ROBOIMAGE\d+/g, ' ... ');
+    
+    // Replace string
+    const rString = ' ... ';
+
+    // Replace ROBOCODEX unless it's at the end
+    text = text.replace(/ROBOCODE\d+(?!\s*$)/g, rString);
+
+    // Replace ROBOIMAGEX unless it's at the end
+    text = text.replace(/ROBOIMAGE\d+(?!\s*$)/g, rString);
+
+     return text;
 }
 
 function hideFullDescription(){
