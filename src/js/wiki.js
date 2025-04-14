@@ -206,116 +206,48 @@ function articleStandard(id,title,topic,content,images,code,view){
     return html;
 }
 
-function accountFullsize(idKey,title,children,tags,certificate,license,view){
+function accountFullsize(id,title,topic,content,images,code,view){
 
-    var size = 20;
-    var sizeCertificate = 38;
-    var colorCertificate = styleHighlight;
-    var colorCertificateText = "#ffffff";
-    var color = styleHighlight;
-    var jsonTags = tags; // Handle the response
-    var formatedTags = "";
-    var formatedLicense = "";
-    
-    jsonTags.forEach(item => {
+    // Set font color for code
+    var codeColor = COLORCSHARP;
+    if(topic.includes("Powershell"))
+        codeColor = COLORPOWERSHELL;
 
-        if(item != licenseStandard && item != licenseExecutive){
-            formatedTags += '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+ item + '\')" style="color: ' + styleHighlight + ' ">' + item + '</div>';
-        }
-    });
+    var formatedTopic = '<div class="mainSecondColor tag flv" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
-    if(license == 0)
-    {
-        formatedLicense += '<div class="tag_license" onclick="loadAccountsForTagName(\''+ licenseStandard + '\')" style="color: ' + styleHighlight + ' "><div class="tag_license_image">' + svgLogo(color,size,size) + '</div>' + licenseStandard + '</div>';
+    var formatedContent = "";
+    var divFooterPreview = "";
+    if(view == "search" || view == "tag"){
+        // Short text
+        formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
+        divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview flv">Preview</div>';
+    } else {
+        // Rich text
+        formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
     }
 
-    if(license == 1) 
-    {
-        formatedLicense += '<div class="tag_license" onclick="loadAccountsForTagName(\''+ licenseExecutive + '\')" style="color: ' + styleHighlight + ' "><div class="tag_license_image">' + svgLogoExecutive(color,size,size) + '</div>' + licenseExecutive + '</div>';
+    // Check for code to put it 
+    var divTitleClass = "account_standard_title_small";
+    var divHeaderBackground = "";
+    if(code.length > 0 && view == "search"){
+        divTitleClass = "account_standard_title_large";
+        divHeaderBackground = '<div class="account_standard_image flv" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code flv" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
     }
-    
+
+    // Check share button
+    var divFooterShare = '<div class="account_standard_license flv"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>';
+    if(view == "search") 
+        divFooterShare = "";
+
     var html =
-      '<div idKey="' + idKey + '" class="mainColor mainTextColor account_fullview_container flv")">' + 
-         '<div class="mainThirdColor account_fullview_image flv" style="background-image: url(\'' + pathToAccountImages + idKey + '.jpg\');"></div>' +
-         '<div class="account_standard_certificate_background flv">' + svgCertificate(colorCertificate,sizeCertificate,sizeCertificate) + '</div>' +
-         '<div class="account_standard_certificate flv" onclick="openGuideline()" style="color: ' + colorCertificateText + '">' + certificate + '</div>' +
-         '<div id="' + view + '-'+ idKey + '" class="mainSecondColor account_standard_download account_standard_download_small flv" onclick="download(\'' + idKey + '\',\'' + view + '\')" style="color: ' + color + '"><div class="account_standard_download_image flv" onclick="download(\'' + idKey + '\',\'' + view + '\')" >' + svgImport(color,size,size) + '</div>Import</div>' +
+      '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container flv" onclick="loadFullDescription(\'' + id + '\')">' + 
+         divHeaderBackground +
+         '<div class="' + divTitleClass  + ' flv">' + title + '</div>' +
+         '<div class="account_standard_description flv">' + formatedContent + '</div>' +
+         '<div class="account_standard_tags flv">' + formatedTopic  + '</div>' +
+         divFooterShare +
+         divFooterPreview +
       '</div>';
-
-    
-    
-    children.Tasks.forEach(task => {
-
-        html += 
-        '<div class="mainColor mainTextColor account_fullview_container_middle flv")">' + 
-            '<div class="mainTextDisabledColor account_fullview_item flv">#' + task.Item + '</div>' +
-            '<div class="mainTextDisabledColor account_fullview_type flv">Script language: ' + task.Type + '</div>' +
-            '<div class="account_fullview_sub_title flv">' + task.Title + ' </div>' +
-            '<div class="mainSecondColor account_fullview_description flv">' + task.Description + '</div>';
-       
-        // Print parameters
-        task.Parameters.forEach(parameter => {
-
-            if(parameter.length > 0){
-
-                html += '<div class="mainTextDisabledColor account_fullview_parameter_title flv">Parameter variables (' + parameter.length + ')</div>';
-
-            }
-
-            for (var i = 0; i < parameter.length; i++) {
-                if(parameter[i].length == 3){
-                    html += 
-                    '<div class="mainSecondColor account_fullview_parameter flv">' +
-                        parameter[i][0] + '&nbsp;&nbsp;&nbsp;' + '<span class="mainTextDisabledColor flv">' + parameter[i][2] + '</span>' + '<br>' + '<div class="mainThirdColor mainTextDisabledColor account_fullview_parameter_default flv">Default: ' + parameter[i][1] + '</div>' +
-                    '</div>';
-                }
-            } 
-        });
-
-        // Print Keys
-        task.Keys.forEach(key => {
-
-            if(key.length > 0){
-
-                html += '<div class="mainTextDisabledColor account_fullview_parameter_title flv">Parameter keys (' + key.length + ')</div>';
-            }
-
-            for (var i = 0; i < key.length; i++) {
-                if(key[i].length == 3){
-                    html += 
-                    '<div class="mainSecondColor account_fullview_parameter flv">' + key[i][0] + '&nbsp;&nbsp;&nbsp;' + '<span class="mainTextDisabledColor flv">' + key[i][2] + '</span></div>';
-                }
-            } 
-        });
-
-        // Print followed by
-        task.Follows.forEach(followed => {
-
-            if(followed.length > 0){
-
-                html += '<div class="mainTextDisabledColor account_fullview_parameter_title flv">Followed by (' + followed.length + ')</div>';
-
-                html += '<div class="mainSecondColor account_fullview_parameter flv">';
-
-                for (var i = 0; i < followed.length; i++)
-                    html += '<div class="mainThirdColor mainTextDisabledColor account_fullview_followed_by flv">#' + followed[i][1] + ' ' + followed[i][0] + '</div>';
-               
-                html += '</div>';
-            }
-        });
-
-        html +=  '</div>';
-    });
-
-    html += 
-    '<div class="mainColor mainTextColor account_fullview_container_end flv")">' + 
-        '<div class="account_standard_tags flv">' + formatedTags + '</div>' +
-         '<div class="account_standard_license flv">' + formatedLicense + '<div class="tag share" onclick="shareAccount(\''+ idKey + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +
-    '</div>' +
-    '<div class="account_fullview_container_annex flv">' + 
-        '<div class="mainTextDisabledColor account_fullview_idKey flv">IdKey: ' + idKey + '</div>' +
-    '</div>';
-
     return html;
 }
 
