@@ -351,7 +351,7 @@ function loadFullDescription(idKey){
     ARTICLES.forEach(item => {
 
         // Just include accounts with the same tag in it
-        if(item.IdKey.includes(idKey)){
+        if(item.Id.includes(idKey)){
             title = item.Title;
             output = articleFullsize(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code);
         }
