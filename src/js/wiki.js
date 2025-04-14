@@ -156,44 +156,17 @@ function loadCSS(url) {
     };
 }
 
-function accountStandard(idKey,title,description,tags,certificate,license,view){
+function accountStandard(id,title,topic,content,images,code,view){
 
-    var size = 20;
-    var sizeCertificate = 38;
-    var colorCertificate = styleHighlight;
-    var colorCertificateText = "#ffffff";
     var color = styleHighlight;
-    var jsonTags = tags; // Handle the response
-    var formatedTags = "";
-    var formatedLicense = "";
+    var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
-    jsonTags.forEach(item => {
-
-        if(item != licenseStandard && item != licenseExecutive){
-            formatedTags += '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+ item + '\')" style="color: ' + styleHighlight + ' ">' + item + '</div>';
-        }
-    });
-
-    if(license == 0)
-    {
-        formatedLicense += '<div class="tag_license" onclick="loadAccountsForTagName(\''+ licenseStandard + '\')" style="color: ' + styleHighlight + ' "><div class="tag_license_image">' + svgLogo(color,size,size) + '</div>' + licenseStandard + '</div>';
-    }
-
-    if(license == 1) 
-    {
-        formatedLicense += '<div class="tag_license" onclick="loadAccountsForTagName(\''+ licenseExecutive + '\')" style="color: ' + styleHighlight + ' "><div class="tag_license_image">' + svgLogoExecutive(color,size,size) + '</div>' + licenseExecutive + '</div>';
-    }
-    
     var html =
-      '<div idKey="' + idKey + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + idKey + '\')">' + 
-         '<div class="mainThirdColor account_standard_image" style="background-image: url(\'' + pathToAccountImages + idKey + '.jpg\');"></div>' +
-         '<div class="account_standard_certificate_background">' + svgCertificate(colorCertificate,sizeCertificate,sizeCertificate) + '</div>' +
-         '<div class="account_standard_certificate" onclick="openGuideline()" style="color: ' + colorCertificateText + '">' + certificate + '</div>' +
-         '<div id="' + view + '-'+ idKey + '" view=" '+ view + '" class="mainSecondColor account_standard_download account_standard_download_small" onclick="download(\'' + idKey + '\',\'' + view + '\')" style="color: ' + color + '"><div class="account_standard_download_image" onclick="download(\'' + idKey + '\',\'' + view + '\')" >' + svgImport(color,size,size) + '</div>Import</div>' +
+      '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
          '<div class="account_standard_title">' + title + '</div>' +
-         '<div class="account_standard_description">' + description + '</div>' +
-         '<div class="account_standard_tags">' + formatedTags + '</div>' +
-         '<div class="account_standard_license">' + formatedLicense + '<div class="tag share" onclick="shareAccount(\''+ idKey + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +
+         '<div class="account_standard_description">' + content + '</div>' +
+         '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
+         '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ idKey + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +
       '</div>';
     return html;
 }
