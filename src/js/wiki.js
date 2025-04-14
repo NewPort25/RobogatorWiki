@@ -15,7 +15,7 @@ const COLORPOWERSHELL = "#8ED1FC";
 
 var DESCRIPTION = false;
 
-const MAXNEWESTCOUNT = 5;
+const MAXNEWESTCOUNT = 1;
 const MAXSEARCHCOUNT = 10;
 
 const pathToAccounts = "load/articles.js";
