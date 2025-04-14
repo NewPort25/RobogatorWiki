@@ -166,7 +166,7 @@ function accountStandard(id,title,topic,content,images,code,view){
          '<div class="account_standard_title">' + title + '</div>' +
          '<div class="account_standard_description">' + content + '</div>' +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
-         '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ idKey + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +
+         '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +
       '</div>';
     return html;
 }
