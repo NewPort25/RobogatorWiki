@@ -8,6 +8,10 @@ var FUSE;
 var HEIGHT;
 var SCROLL;
 
+// Code colors
+const COLORCSHARP = "#FCB900";
+const COLORPOWERSHELL = "#8ED1FC";
+
 var DESCRIPTION = false;
 
 const MAXNEWESTCOUNT = 5;

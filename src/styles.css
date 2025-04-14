@@ -248,6 +248,7 @@
 		cursor: pointer;
 	}
 	.account_standard_title{
+		margin-top: 64px;
 		font-size: 26px;
 	}
 	.account_standard_description{
