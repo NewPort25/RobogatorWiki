@@ -237,6 +237,15 @@
 		font-family: monospace !important;
 		font-size: 18px;
 	}
+	.account_standard_code_panel{
+		text-align: center;
+		display: flex;
+		align-items: center;  /* Vertical centering */
+		justify-content: center; /* Horizontal centering (optional) */
+		border-radius: 15px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
 	.account_standard_title_small{
 		margin-top: 0px;
 		font-size: 26px;

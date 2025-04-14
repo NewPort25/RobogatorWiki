@@ -170,9 +170,16 @@ function accountStandard(id,title,topic,content,images,code,view){
 
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
-    var formatedContent = replaceRobogatorPlaceholders(content);
+    var formatedContent = ""
+    if(view == "search"){
+        // Short text
+        replaceRobogatorPlaceholdersWithEllipsis(content);
+    } else {
+        // Rich text
+        replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
+    }
 
-    // Check for code to put it in header
+    // Check for code to put it 
     var divTitleClass = "account_standard_title_small";
     var divHeaderBackground = "";
     if(code.length > 0 && view == "search"){
@@ -513,7 +520,7 @@ function loadFullDescription(idKey){
      
 }
 
-function replaceRobogatorPlaceholders(text) {
+function replaceRobogatorPlaceholdersWithEllipsis(text) {
     
     // Replace string
     const replaceString = ' ... ';
@@ -527,6 +534,17 @@ function replaceRobogatorPlaceholders(text) {
     
     return text;
 }
+
+function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
+    
+    text = text.replace(/ROBOCODE\d+/g, '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[parseInt(str.match(/\d+/)[0], 10)]) + '</div></div>';
+
+
+    text = text.replace(/ROBOIMAGE\d+/g, replaceString);
+    
+    return text;
+}
+
 
 function hideFullDescription(){
 
