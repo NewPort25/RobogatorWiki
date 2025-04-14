@@ -493,15 +493,16 @@ function loadFullDescription(idKey){
 function replaceRobogatorPlaceholders(text) {
     
     // Replace string
-    const rString = ' ... ';
+    const replaceString = ' ... ';
 
-    // Replace ROBOCODEX unless it's at the end
-    text = text.replace(/ROBOCODE\d+(?!\s*$)/g, rString);
-
-    // Replace ROBOIMAGEX unless it's at the end
-    text = text.replace(/ROBOIMAGE\d+(?!\s*$)/g, rString);
-
-     return text;
+    // Remove ROBOCODE/IMAGE if at the end (possibly followed by whitespace)
+    text = text.replace(/(ROBOCODE\d+|ROBOIMAGE\d+)\s*$/, '');
+    
+    // Replace ROBOCODE/IMAGE everywhere else with ...
+    text = text.replace(/ROBOCODE\d+/g, replaceString);
+    text = text.replace(/ROBOIMAGE\d+/g, replaceString);
+    
+    return text;
 }
 
 function hideFullDescription(){
