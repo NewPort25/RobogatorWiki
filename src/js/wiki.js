@@ -167,7 +167,6 @@ function accountStandard(id,title,topic,content,images,code,view){
     if(topic == "Powershell")
         codeColor = COLORPOWERSHELL;
 
-
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = replaceRobogatorPlaceholders(content);
