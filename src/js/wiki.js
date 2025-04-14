@@ -537,7 +537,7 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
 
 function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     
-    text = text.replace(/ROBOCODE\d+/g, '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[parseInt(str.match(/\d+/)[0], 10)]) + '</div></div>';
+    text = text.replace(/ROBOCODE\d+/g, '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[parseInt(match.match(/\d+/)[0], 10)]) + '</div></div>';
 
 
     text = text.replace(/ROBOIMAGE\d+/g, replaceString);
