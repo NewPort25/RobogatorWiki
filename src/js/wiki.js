@@ -18,8 +18,8 @@ var DESCRIPTION = false;
 const MAXNEWESTCOUNT = 1;
 const MAXSEARCHCOUNT = 10;
 
-const pathToAccounts = "load/articles.js";
-const pathToAccountImages = "load/images/";
+const pathToArticles = "load/articles.js";
+const pathToArticleImages = "load/images/";
 
 const licenseStandard = "Beginners & Masters";
 const licenseExecutive = "For Masters only";
@@ -537,7 +537,12 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
 
 function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     
+    // Show code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
+
+    // Show image
+    text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="mainThirdColor account_standard_image_panel"><img src="'+ 
+        pathToArticleImages image[number]  + '" ></div>'});
 
     return text;
 }
@@ -669,7 +674,7 @@ function scrollToListTop() {
 // Load accounts from js file
 const startTime = Date.now(); // Record start time
 const script = document.createElement("script");
-script.src = pathToAccounts;
+script.src = pathToArticles;
 script.onload = function () {
 	const elapsedTime = Date.now() - startTime; // Calculate time difference
     if (elapsedTime >= 500) {
