@@ -181,7 +181,7 @@ function accountStandard(id,title,topic,content,images,code,view){
     }
 
     // Check share button
-    var divFooterShare = '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>';
+    var divFooterShare = '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>';
     if(view == "search") 
         divFooterShare = "";
 
