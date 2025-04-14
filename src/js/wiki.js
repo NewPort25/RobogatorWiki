@@ -161,10 +161,13 @@ function accountStandard(id,title,topic,content,images,code,view){
     var color = styleHighlight;
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
+    var formatedContent = replaceRobogatorPlaceholders(content);
+
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
+         '<div class="mainThirdColor account_standard_image" style="background-image: url(\'' + pathToAccountImages + idKey + '.jpg\');"></div>' +
          '<div class="account_standard_title">' + title + '</div>' +
-         '<div class="account_standard_description">' + content + '</div>' +
+         '<div class="account_standard_description">' + formatedContent + '</div>' +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
          '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">share it</div></div>' +
       '</div>';
@@ -485,6 +488,12 @@ function loadFullDescription(idKey){
     
     document.getElementById("accountFullview").innerHTML = output;
      
+}
+
+function replaceRobogatorPlaceholders(text) {
+    return text
+        .replace(/ROBOCODE\d+/g, ' ... ')
+        .replace(/ROBOIMAGE\d+/g, ' ... ');
 }
 
 function hideFullDescription(){
