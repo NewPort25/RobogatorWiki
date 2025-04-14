@@ -171,11 +171,11 @@ function articleStandard(id,title,topic,content,images,code,view){
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = "";
-    var divFoorerPreview = "";
+    var divFooterPreview = "";
     if(view == "search" || view == "tag"){
         // Short text
         formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
-        divFoorerPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
+        divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
     } else {
         // Rich text
         formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
