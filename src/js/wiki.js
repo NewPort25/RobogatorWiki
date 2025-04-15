@@ -196,8 +196,8 @@ function articleStandard(id,title,topic,content,images,code,date,view){
     } else if (content.includes("ROBOBUTTON") && (view == "search" || view == "tag")){
         // header for button description
         const size = 24;
-        const match = content.match(/ROBOBUTTON(\w+)/g);
-        divHeaderBackground = '<div class="account_standard_for_button">' + robogatorSvgButton(match[1],styleHighlight,size,size) + '</div>';
+        const word = (content.match(/ROBOBUTTON(\w+)/) || [])[1];
+        divHeaderBackground = '<div class="account_standard_for_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div>';
         divTitleClass = "account_standard_title_for_button";
     }
 
