@@ -99,7 +99,7 @@
 	br {
 		display: block;
 		content: "";
-		margin-bottom: 15px; /* Adjust space after line break */
+		height: 15px;
 	}
 	h1 {
 		margin: auto;
