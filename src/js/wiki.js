@@ -696,6 +696,7 @@ const observer = new MutationObserver(mutations => {
             const ratio = img.naturalWidth / img.naturalHeight;
             const maxHeight = 600 * ratio;
             img.style.maxHeight = maxHeight + "px";
+            console.log("New image: " + img.src + " " + maxHeight);
           };
           if (img.complete) {
             logSizes();
