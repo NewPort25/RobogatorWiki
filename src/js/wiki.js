@@ -395,9 +395,9 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
 
         navigation.forEach(item => {
             if(item.toUpperCase().includes(word)){
-                out += '<span style="color:' + styleHighlight + ';">' + item + '</span>';
+                out += '<div class="account_standard_navigation" style="color:' + styleHighlight + ';">' + item + '</div>';
             } else {
-                out += item;
+                out += '<div class="account_standard_navigation">' + item + '</div>';
             } 
 
         });

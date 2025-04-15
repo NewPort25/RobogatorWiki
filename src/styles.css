@@ -239,9 +239,12 @@
 		text-align: left;
 		border-radius: 15px;
 		padding: 30px;
-		word-spacing: 15px;
 		margin-top: 15px;
 		margin-bottom: 15px;
+	}
+	.account_standard_navigation{
+		padding: 15px 0;
+		display: inline-block;
 	}
 	.account_standard_code_panel{
 		text-align: left;
