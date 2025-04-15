@@ -231,7 +231,7 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
         divFooterShare = "";
 
     var html =
-      '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container flv" onclick="loadFullDescription(\'' + id + '\')">' + 
+      '<div idKey="' + id + '" class="mainColor mainTextColor account_fullview_container flv" onclick="loadFullDescription(\'' + id + '\')">' + 
          '<div class="account_standard_description flv">' + formatedContent + '</div>' +
          '<div class="account_standard_tags flv">' + formatedTopic  + '</div>' +
          divFooterShare +

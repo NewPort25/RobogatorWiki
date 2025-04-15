@@ -334,22 +334,11 @@
 		margin-right: 0 !important;
 	}
 	.account_fullview_container{
-		padding: 25px 25px 15px 25px;
-		border-radius: 15px 15px 0 0;
-		margin-bottom: 5px;
-		height: 200px;
-		position: relative;
-	}
-	.account_fullview_container_middle{
-		padding: 25px 20px 15px 20px;
-		margin-bottom: 5px;
-		position: relative;
-	}
-	.account_fullview_container_end{
-		padding: 15px 30px 15px 30px;
-		border-radius: 0 0 15px 15px;
+		padding: 5px 30px 15px 30px;
+		border-radius: 15px;
 		margin-bottom: 15px;
 		position: relative;
+		cursor: pointer;
 	}
 	.account_fullview_container_annex{
 		padding: 0 25px;
