@@ -433,7 +433,9 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     return text;
 }
 
-function formatedDate(input){
+function formatedDate(dateInt){
+
+    const input = dateInt.toString();
 
     const year = input.substring(0, 4);
     const month = input.substring(4, 6);
