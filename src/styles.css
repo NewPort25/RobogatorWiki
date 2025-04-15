@@ -237,8 +237,6 @@
 	}
 	.account_standard_navigation_panel{
 		text-align: left;
-		display: flex;
-		align-items: center;  /* Vertical centering */
 		border-radius: 15px;
 		padding: 30px;
 		word-spacing: 15px;
