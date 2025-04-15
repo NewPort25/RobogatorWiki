@@ -291,7 +291,11 @@
 		border-radius: 15px;
 	}
 	.account_standard_for_button{
-
+		position: absolute;
+		right: 30px;
+		top: 25px;
+		height: 24px;
+		width: 24px;
 	}
 	.account_standard_title_small{
 		margin-top: 0px;
