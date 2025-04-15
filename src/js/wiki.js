@@ -232,7 +232,7 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
 
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_fullview_container flv" onclick="loadFullDescription(\'' + id + '\')">' + 
-         '<div class="account_standard_description flv">' + formatedContent + '</div>' +
+         '<div class="account_fullview_description flv">' + formatedContent + '</div>' +
          '<div class="account_standard_tags flv">' + formatedTopic  + '</div>' +
          divFooterShare +
          divFooterPreview +

@@ -277,7 +277,7 @@
 	.account_standard_description{
 		margin-top: 10px;
 		margin-bottom: 15px;
-		font-size: 14px;
+		font-size: 15px;
 		line-height: 1.5;
 	}
 	.account_standard_preview{
@@ -363,10 +363,8 @@
 	}
 	.account_fullview_description{
 		margin-top: 10px;
-		margin-bottom: 10px;
-		padding: 30px;
-		border-radius: 24px;
-		font-size: 14px;
+		margin-bottom: 15px;
+		font-size: 15px;
 		line-height: 1.5;
 	}
 	.account_fullview_parameter{
