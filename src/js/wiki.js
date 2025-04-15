@@ -685,31 +685,3 @@ document.getElementById("backButton").addEventListener("click", function(event) 
     hideFullDescription();
     
 });
-
-// Creazy image hack
-const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      mutation.addedNodes.forEach(node => {
-        if (node.tagName === "IMG") {
-          const img = node;
-          const logSizes = () => {
-            const ratio = img.naturalWidth / img.naturalHeight;
-            const maxHeight = 600 * ratio;
-            img.style.maxHeight = maxHeight + "px";
-            console.log("New image: " + img.src + " " + maxHeight);
-          };
-          if (img.complete) {
-            logSizes();
-          } else {
-            img.onload = logSizes;
-          }
-        }
-      });
-    });
-  });
-  
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-
