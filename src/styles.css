@@ -96,11 +96,9 @@
 		padding: 25px 25px 0;
 		margin-bottom: calc(1em - 10px);
 	}
-	br {
-		display: block;
+	.new {
+		display: inline-block;
 		height: 15px;
-		width: 100%;
-		background-color: green;
 	}
 	h1 {
 		margin: auto;
