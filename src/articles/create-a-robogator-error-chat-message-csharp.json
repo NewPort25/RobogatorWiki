@@ -4,5 +4,6 @@
   "Rank":2,
   "Content":"t is possible to set the state of a Chat message manually to: Error occurred in runtime. ROBOCODE0 TThe method above writes This is an error to the Chat and sets the Chat message state also to error occurred in runtime. ROBOIMAGE0 Use of this is to log partial errors during the running Task. When using try catch then you are able to track errors even if the Task finishes completely with this method. Ever partial error will be counted for the Trail statistic and the finished Task state is Error occurred in runtime.",
   "Images":["create-a-robogator-error-chat-message-csharp.png"],
-  "Code":["Console.WriteLineError(\"This is an error\");"]
+  "Code":["Console.WriteLineError(\"This is an error\");"],
+  "Date":20250415
 }
