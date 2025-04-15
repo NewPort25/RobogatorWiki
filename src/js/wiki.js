@@ -238,7 +238,7 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
          divFooterPreview +
       '</div>'+
       '<div class="account_fullview_container_annex flv">' + 
-         '<div class="mainTextDisabledColor account_fullview_idKey flv">Last update: ' + formatedDate(date) + '</div>' +
+         '<div class="mainTextDisabledColor account_fullview_idKey flv">Updated on: ' + formatedDate(date) + '</div>' +
        '</div>';
     return html;
 }
