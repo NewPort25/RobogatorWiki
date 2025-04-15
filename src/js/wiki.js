@@ -694,7 +694,6 @@ function handleImage(img) {
         if(img.parentElement){
             if (img.parentElement.classList.contains("account_standard_image_panel")) {
                 img.parentElement.style.maxHeight = maxHeight + "px";
-                alert("fone");
             }
         }
         
