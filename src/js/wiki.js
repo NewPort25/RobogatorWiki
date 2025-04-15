@@ -279,13 +279,10 @@ function loadJson(){
     ARTICLES.forEach(item => {
         
         // Show just the newest article
-        if(counter < MAXNEWESTCOUNT){
-            if(lastDate < item.Date){
-                output = articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,item.Date);
-                lastDate = item.Date;
-                counter++;
-            }
-        } 
+        if(lastDate < item.Date){
+            output = articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,item.Date);
+            lastDate = item.Date;
+        }
 
         // Handle tags -> articel topics
         if (!tags.includes(item.Topic)) {
