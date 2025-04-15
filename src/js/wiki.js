@@ -193,7 +193,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         // Header for code
         divTitleClass = "account_standard_title_large";
         divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
-    } else if (content.include("ROBOBUTTON") && (view == "search" || view == "tag")){
+    } else if (content.includes("ROBOBUTTON") && (view == "search" || view == "tag")){
         // header for button description
         const size = 24;
         divTitleClass = "account_standard_title_for_button";
