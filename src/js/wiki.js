@@ -206,7 +206,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
 
     // Check share button
     var divFooterShare = '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>';
-    if(view == "search") 
+    if(view == "search" || view == "tag") 
         divFooterShare = "";
 
     var html =
@@ -231,27 +231,15 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
     var formatedTopic = '<div class="mainSecondColor tag flv" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = "";
-    var divFooterPreview = "";
-    if(view == "search" || view == "tag"){
-        // Short text
-        formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
-        divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview flv">Preview</div>';
-    } else {
-        // Rich text
-        formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
-    }
-    
-    // Check share button
-    var divFooterShare = '<div class="account_standard_license flv"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>';
-    if(view == "search" || view == "tag") 
-        divFooterShare = "";
+   
+    // Rich text
+    formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
 
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_fullview_container flv" onclick="loadFullDescription(\'' + id + '\')">' + 
          '<div class="account_fullview_description flv">' + formatedContent + '</div>' +
          '<div class="account_standard_tags flv">' + formatedTopic  + '</div>' +
-         divFooterShare +
-         divFooterPreview +
+         '<div class="account_standard_license flv"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>' +
       '</div>'+
       '<div class="account_fullview_container_annex flv">' + 
          '<div class="mainTextDisabledColor account_fullview_idKey flv">Updated on ' + formatedDate(date) + '</div>' +
