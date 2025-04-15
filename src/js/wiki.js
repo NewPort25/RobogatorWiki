@@ -401,7 +401,7 @@ function formatedDate(input){
     year: "numeric",
     month: "long",
     day: "numeric"
-    }).toLowerCase();
+    });
 
 }
 
