@@ -379,6 +379,8 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
 
 function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     
+    const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
+
     // Formate code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
 
@@ -387,7 +389,25 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
         pathToArticleImages + images[number]  + '" ></div>'});
 
     // Formate navigation
-    text = text.replace(/ROBONAVIGATION(\w+)/g, (match, word) => {return '<div class="account_standard_navigation_panel"><div class="account_standard_navigation" style="color: ' + color + ';" ></div></div>'});
+    text = text.replace(/ROBONAVIGATION(\w+)/g, (match, word) => {
+        
+        var out = '<div class="account_standard_navigation_panel">';
+
+        navigation.forEach(item => {
+            if(item.toUpperCase().includes(word)){
+                out += '<span style="color:' + styleHighlight + ';">' + item + '<span>';
+            } else {
+                out += item;
+            } 
+
+        });
+
+        out += '</div>';
+        return out;
+    });
+
+
+    //<div class="account_standard_navigation" style="color: ' + color + ';" ></div>
 
     return text;
 }
