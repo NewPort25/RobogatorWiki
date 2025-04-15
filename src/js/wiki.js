@@ -391,7 +391,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     // Formate navigation
     text = text.replace(/ROBONAVIGATION(\w+)/g, (match, word) => {
         
-        var out = '<div class="mainColor account_standard_navigation_panel">';
+        var out = '<div class="mainSecondColor account_standard_navigation_panel">';
 
         navigation.forEach(item => {
             if(item.toUpperCase().includes(word)){
