@@ -173,11 +173,11 @@ function articleStandard(id,title,topic,content,images,code,date,view){
     var divFooterPreview = "";
     if(view == "search" || view == "tag"){
         // Short text
-        formatedContent = replaceRobogatorPlaceholdersWithEllipsis(content);
+        formatedContent = '<div class="account_standard_description_short">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
         divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
     } else {
         // Rich text
-        formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
+        formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor) + '</div>';
     }
 
     // Check for code to put it 
@@ -197,7 +197,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
          divHeaderBackground +
          '<div class="' + divTitleClass  + '">' + title + '</div>' +
-         '<div class="account_standard_description">' + formatedContent + '</div>' +
+         formatedContent +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
          divFooterShare +
          divFooterPreview +

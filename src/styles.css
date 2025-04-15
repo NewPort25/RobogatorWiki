@@ -285,7 +285,7 @@
 		margin-top: 64px;
 		font-size: 26px;
 	}
-	.account_standard_description{
+	.account_standard_description_short{
 		margin-top: 10px;
 		margin-bottom: 15px;
 		font-size: 15px;
@@ -294,6 +294,12 @@
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3; /* Limit to 3 lines */
 		overflow: hidden;
+	}
+	.account_standard_description_full{
+		margin-top: 10px;
+		margin-bottom: 15px;
+		font-size: 15px;
+		line-height: 1.5;
 	}
 	.account_standard_preview{
 		position: absolute;
