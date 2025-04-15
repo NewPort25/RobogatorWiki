@@ -187,9 +187,13 @@ function articleStandard(id,title,topic,content,images,code,date,view){
 
     var formatedContent = "";
     var divFooterPreview = "";
-    if(view == "search" || view == "tag"){
+    if(view == "search"){
         // Short text
         formatedContent = '<div class="account_standard_description_short">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
+        divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
+    } else if(view == "tag"){
+        // Short text
+        formatedContent = '<div class="account_standard_description_medium">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
         divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
     } else {
         // Rich text
