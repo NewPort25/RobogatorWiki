@@ -689,8 +689,8 @@ document.getElementById("backButton").addEventListener("click", function(event) 
 
 function handleImage(img) {
     const logHeight = () => {
-        const ratio = img.naturalWidth / img.naturalHeight;
-        const maxHeight = 600 * ratio;
+        const ratio = img.naturalWidth / img.naturalHeight ;
+        const maxHeight = 600 / ratio;
         if(img.parentElement){
             if (img.parentElement.classList.contains("account_standard_image_panel")) {
                 img.parentElement.style.maxHeight = maxHeight + "px";
