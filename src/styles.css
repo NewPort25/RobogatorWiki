@@ -96,6 +96,10 @@
 		padding: 25px 25px 0;
 		margin-bottom: calc(1em - 10px);
 	}
+	br {
+		display: block;
+		margin-bottom: 15px; /* Adjust space after line break */
+	}
 	h1 {
 		margin: auto;
 		text-align: center;
