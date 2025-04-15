@@ -72,7 +72,7 @@ function svgReactivate(color,width,height){
 }
 
 function svgDelete(color,width,height){
-    
+    return '';
 }
 
 
@@ -433,6 +433,18 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
             case 'DEACTIVATE':
                 out += '<div class="mainSecondColor  account_standard_button">' + svgDeactivate(styleHighlight,size,size) + '</div>';
                 break;
+            case 'REACTIVATE':
+                out += '<div class="mainSecondColor  account_standard_button">' + svgReactivate(styleHighlight,size,size) + '</div>';
+                break;
+            case 'DELETE':
+                out += '<div class="mainSecondColor  account_standard_button">' + svgDelete(styleHighlight,size,size) + '</div>';
+                break; 
+            case 'IMPORT':
+                out += '<div class="mainSecondColor  account_standard_button">' + svgImport(styleHighlight,size,size) + '</div>';
+                break;
+            case 'EXPORT':
+                out += '<div class="mainSecondColor  account_standard_button">' + svgExport(styleHighlight,size,size) + '</div>';
+                break;   
         }
 
         out += '</div>';
