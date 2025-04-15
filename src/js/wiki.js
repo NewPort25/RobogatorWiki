@@ -74,7 +74,7 @@ var styleHighlight = urlParams.get('highlight');
 var licenseType = urlParams.get('license');
 
 // Get task if exists
-var accountIdKey = urlParams.get('idKey');
+var accountIdKey = urlParams.get('article');
 
 // Check cookie first
 if(styleTheme == null)
@@ -543,7 +543,7 @@ function loadAccountsForSearchInput(){
 function shareAccount(idKey) {
 
     // Create url
-    const url = cleanUrl + "?idKey=" +  idKey; 
+    const url = cleanUrl + "?article=" +  idKey; 
 
     // Stops bubbling
     event.stopPropagation(); 
