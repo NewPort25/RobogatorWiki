@@ -197,7 +197,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         // header for button description
         const size = 24;
         divTitleClass = "account_standard_title_for_button";
-        divHeaderBackground  = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
+        divHeaderBackground = content.match(/ROBOBUTTON(\w+)/g, (match, word) => {
             return '<div class="account_standard_for_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div>';
         });
     }
