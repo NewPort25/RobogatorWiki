@@ -281,18 +281,15 @@
 		}
 	}
 	.account_standard_button_panel{
-		text-align: left;
-		display: flex;
-		align-items: center;  /* Vertical centering */
 		border-radius: 15px;
 		padding: 30px;
 		margin-top: 15px;
 		margin-bottom: 15px;
+		display: inline-block;
 	}
 	.account_standard_button{
 		height: 64px;
 		width: 64px;
-		display: inline-block;
 	}
 	.account_standard_title_small{
 		margin-top: 0px;
