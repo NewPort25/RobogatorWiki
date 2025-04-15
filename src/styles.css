@@ -256,6 +256,11 @@
 		object-fit: contain; /* or 'contain' depending on your goal */
 		display: block;
 	  }
+	  @media (max-width: 720px) {
+		.account_standard_image_panel img  {
+		  object-fit: cover;
+		}
+	  }
 	.account_standard_title_small{
 		margin-top: 0px;
 		font-size: 26px;
