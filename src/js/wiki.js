@@ -413,7 +413,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
         return out;
     });
 
-    text = text.replace(/ROBONABUTTON(\w+)/g, (match, word) => {
+    text = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
         
         var out = '<div class="mainSecondColor account_standard_button_panel">';
 
