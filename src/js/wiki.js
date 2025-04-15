@@ -385,7 +385,7 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     const replaceString = ' ... ';
 
     // Remove ROBOCODE/IMAGE if at the end (possibly followed by whitespace)
-    text = text.replace(/(ROBOCODE\d+|ROBOIMAGE\d+|ROBONAVIGATION\w+|ROBOBUTTON\w+|ROBOMASTER)\s*$/, '');
+    text = text.replace(/((ROBOCODE\d+|ROBOIMAGE\d+|ROBONAVIGATION\w+|ROBOBUTTON\w+|ROBOMASTER)\s*)+$/, '');
     
     // Replace ROBOCODE/IMAGE everywhere else with ...
     text = text.replace(/ROBOCODE\d+/g, replaceString);
