@@ -290,6 +290,9 @@
 		padding: 24px;
 		border-radius: 15px;
 	}
+	.account_standard_for_button{
+
+	}
 	.account_standard_title_small{
 		margin-top: 0px;
 		font-size: 26px;
@@ -297,6 +300,11 @@
 	.account_standard_title_large{
 		margin-top: 64px;
 		font-size: 26px;
+	}
+	.account_standard_title_for_button{
+		margin-top: 0px;
+		font-size: 26px;
+		padding-right: 40px;
 	}
 	.account_standard_description_short{
 		margin-top: 10px;

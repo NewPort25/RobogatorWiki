@@ -185,10 +185,8 @@ function articleStandard(id,title,topic,content,images,code,date,view){
 
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
-    var formatedContent = "";
-    
-
     // Create speacial header 
+    var formatedContent = "";
     var divTitleClass = "account_standard_title_small";
     var divHeaderBackground = ""; 
     if(code.length > 0 && (view == "search" || view == "tag")){
@@ -200,7 +198,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         const size = 24;
         divTitleClass = "account_standard_title_for_button";
         divHeaderBackground  = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
-            return '<div class="account_standard_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div>';
+            return '<div class="account_standard_for_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div>';
         });
     }
 
