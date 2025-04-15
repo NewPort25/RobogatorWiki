@@ -1,0 +1,9 @@
+{
+  "Title":"Run Task in background",
+  "Topic":"Platform",
+  "Rank":9,
+  "Content":"It is possible to run a Task in the background as a service. This means you can run a Task without showing the Robogator GUI. To do this you need to start Robogator via cmd command interpreter and set the Task uuid as parameter. ROBOIMAGE0 ROBOMASTER",
+  "Images":["runt-task-in-background.png"],
+  "Code":[],
+  "Date":20250311
+}
