@@ -98,8 +98,9 @@
 	}
 	br {
 		display: block;
-		content: "";
 		height: 15px;
+		width: 100%;
+		background-color: green;
 	}
 	h1 {
 		margin: auto;
