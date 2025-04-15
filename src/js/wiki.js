@@ -394,7 +394,15 @@ function formatedDate(input){
     const month = input.substring(4, 6);
     const day = input.substring(6, 8);
 
-    return day + "." + month + "." + year;
+    const date = new Date(year + "-" + month+ "-" + day);
+
+    // Format using `toLocaleDateString`
+    return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+    }).toLowerCase();
+
 }
 
 function hideFullDescription(){
