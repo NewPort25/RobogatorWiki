@@ -262,8 +262,8 @@
 		  width: auto;
 		}
 		.account_standard_image_panel{
-			mask-image: linear-gradient(to right, inherit 95%, transparent 100%);
-			-webkit-mask-image: linear-gradient(to right, inherit 95%, transparent 100%);
+			mask-image: linear-gradient(to right, inherit, 95%, transparent 100%);
+			-webkit-mask-image: linear-gradient(to right, inherit,95%, transparent 100%);
 		}
 	}
 	.account_standard_title_small{
