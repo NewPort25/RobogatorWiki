@@ -235,6 +235,15 @@
 		line-height: 1.5;
 		font-family: monospace !important;
 	}
+	.account_standard_navigation_panel{
+		text-align: left;
+		display: flex;
+		align-items: center;  /* Vertical centering */
+		border-radius: 15px;
+		padding: 30px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
 	.account_standard_code_panel{
 		text-align: left;
 		display: flex;
