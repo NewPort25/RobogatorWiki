@@ -691,10 +691,13 @@ function handleImage(img) {
     const logHeight = () => {
         const ratio = img.naturalWidth / img.naturalHeight;
         const maxHeight = 600 * ratio;
-        if (parentDiv.classList.contains("account_standard_image_panel")) {
-            parentDiv.style.maxHeight = maxHeight + "px";
-            alert("fone");
-          }
+        if(img.parentElement){
+            if (img.parentElement.classList.contains("account_standard_image_panel")) {
+                img.parentElement.style.maxHeight = maxHeight + "px";
+                alert("fone");
+            }
+        }
+        
     };
   
     if (img.complete) {
