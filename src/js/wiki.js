@@ -404,7 +404,7 @@ function formatedDate(input){
     const month = input.substring(4, 6);
     const day = input.substring(6, 8);
 
-    return "${day}.${month}.${year}";
+    return day + "." + month + "." + year;
 }
 
 function hideFullDescription(){
