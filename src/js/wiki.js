@@ -372,7 +372,7 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     // Replace ROBOCODE/IMAGE everywhere else with ...
     text = text.replace(/ROBOCODE\d+/g, replaceString);
     text = text.replace(/ROBOIMAGE\d+/g, replaceString);
-    text = text.replace(/ROBOIMAGE\w+/g, replaceString);
+    text = text.replace(/ROBONAVIGATION\w+/g, replaceString);
     
     return text;
 }
