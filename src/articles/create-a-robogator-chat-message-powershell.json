@@ -1,7 +1,7 @@
 {
   "Title":"Create a Robogator Chat message",
   "Topic":"Powershell scripting",
-  "Rank":"1",
+  "Rank":1,
   "Content":"The preferred way to write to the Robogator Chat with PowerShell is to use the following method: ROBOCODE0 This example above generates a single Robogator Chat message with hello world as content. ROBOIMAGE0",
   "Images":["create-a-robogator-chat-message.png"],
   "Code":["Write-Host \"hello world\""]
