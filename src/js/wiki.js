@@ -435,7 +435,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
 
     // Formatting master
     if(licenseType == 0){
-        text = text.replace(/ROBOMASTER/g, '<div class="new"></div>This is only available with a Master Plan license');
+        text = text.replace(/ROBOMASTER/g, 'This is only available with a Master Plan license');
     } else {
         text = text.replace(/ROBOMASTER/g, '');
     }
