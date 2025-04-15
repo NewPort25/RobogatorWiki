@@ -1,0 +1,9 @@
+{
+  "Title":"Import Accounts",
+  "Topic":"Accounts",
+  "Rank":6,
+  "Content":"To transfer Tasks between different Robogator instances, you can use the smooth background processing Account import and export feature.<br>First, go to the Accounts view. ROBONAVIGATIONACCOUNTS In the Accounts view, you will find the import button. ROBOBUTTONIMPORT The import feature opens a file selection dialog where you can select one or more Robogator Accounts to import into the current Robogator instance. The actual import of the Accounts is done in the background. The import progress is displayed as a percentage below the button.<br>The default import destination is automatically changed to the last selected destination after every import.<br>It is not possible to transfer individual Tasks. Create an Account with only that Task, and then transfer the entire Account with that Task in it.<br>This feature is designed to handle a large number of Accounts at once.",
+  "Images":[],
+  "Code":[],
+  "Date":20250312
+}
