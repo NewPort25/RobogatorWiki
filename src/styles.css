@@ -238,12 +238,12 @@
 	.account_standard_navigation_panel{
 		text-align: left;
 		border-radius: 15px;
-		padding: 30px;
+		padding: 22px 30px;
 		margin-top: 15px;
 		margin-bottom: 15px;
 	}
 	.account_standard_navigation{
-		padding: 15px 0;
+		padding: 8px 15px;
 		display: inline-block;
 	}
 	.account_standard_code_panel{
