@@ -434,9 +434,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
 
     // Formatting master
     if(licenseType == 0){
-        // Get disabled color
-        const style = getComputedStyle(document.getElementsByClassName('mainTextDisabledColor')[0]);
-        text = text.replace(/ROBOMASTER/g, '<div class="tag_license_image">' + svgLogoExecutive(style.color,20,20) + '</div>This is only available with a Master Plan license');
+        text = text.replace(/ROBOMASTER/g, '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license');
     } else {
         text = text.replace(/ROBOMASTER/g, '');
     }
