@@ -686,6 +686,7 @@ document.getElementById("backButton").addEventListener("click", function(event) 
     
 });
 
+// Creazy image hack
 const observer = new MutationObserver(mutations => {
     mutations.forEach(mutation => {
       mutation.addedNodes.forEach(node => {
