@@ -199,6 +199,9 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         const word = (content.match(/ROBOBUTTON(\w+)/) || [])[1];
         divHeaderBackground = '<div class="account_standard_for_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div>';
         divTitleClass = "account_standard_title_for_button";
+    } else if (images.length > 0 && (view == "search" || view == "tag")){
+        divHeaderBackground = '<div class="mainThirdColor account_standard_image" style="background-image: url(' + pathToArticleImages + images[0] + ')" ></div>'
+        divTitleClass = "account_standard_title_large";
     }
 
     var divFooterPreview = "";
