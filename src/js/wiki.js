@@ -689,7 +689,12 @@ document.getElementById("backButton").addEventListener("click", function(event) 
 
 function handleImage(img) {
     const logHeight = () => {
-     alert(img.src);
+        const ratio = img.naturalWidth / img.naturalHeight;
+        const maxHeight = 600 * ratio;
+        if (parentDiv.classList.contains("account_standard_image_panel")) {
+            parentDiv.style.maxHeight = maxHeight + "px";
+            alert("fone");
+          }
     };
   
     if (img.complete) {
