@@ -1,0 +1,9 @@
+{
+  "Title":"Reactivate Accounts",
+  "Topic":"Accounts",
+  "Rank":5,
+  "Content":"To switch Accounts from inactive back to active, you can use the smooth background processing Account reactivate feature.<br>First, go to the Accounts view. ROBONAVIGATIONACCOUNTS In the Accounts view, you will find the reactivate button. ROBOBUTTONREACTIVATE The reactivate feature sets the status of the selected Accounts to active, which means they can be executed and will be added to the active Accounts list. The actual reactivation of the Accounts is done in the background. The reactivation progress is displayed as a percentage below the button.<br>This feature is designed to handle a large number of Accounts at once.",
+  "Images":[],
+  "Code":[],
+  "Date":20250415
+}
