@@ -191,15 +191,14 @@ function articleStandard(id,title,topic,content,images,code,date,view){
     var divHeaderBackground = ""; 
     if(code.length > 0 && (view == "search" || view == "tag")){
         // Header for code
-        divTitleClass = "account_standard_title_large";
         divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
+        divTitleClass = "account_standard_title_large";
     } else if (content.includes("ROBOBUTTON") && (view == "search" || view == "tag")){
         // header for button description
         const size = 24;
+        const match = content.match(/ROBOBUTTON(\w+)/g);
+        divHeaderBackground = '<div class="account_standard_for_button">' + robogatorSvgButton(match[1],styleHighlight,size,size) + '</div>';
         divTitleClass = "account_standard_title_for_button";
-        divHeaderBackground = content.match(/ROBOBUTTON(\w+)/g, (match, word) => {
-            return '<div class="account_standard_for_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div>';
-        });
     }
 
     var divFooterPreview = "";
