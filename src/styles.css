@@ -225,8 +225,8 @@
 		padding: 15px 30px;
 		border-top-left-radius: 15px;
 		border-top-right-radius: 15px;
-		background-size: cover;
-		background-position: 50% 37%;
+		background-size: auto;
+		background-position: 0% 37%;
 		text-align: left;
 		display: flex;
 		align-items: center;  /* Vertical centering */
