@@ -203,7 +203,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
     // Check for code to put it 
     var divTitleClass = "account_standard_title_small";
     var divHeaderBackground = "";
-    if(code.length > 0 && view == "search"){
+    if(code.length > 0 && (view == "search" || view == "tag")){
         divTitleClass = "account_standard_title_large";
         divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
     }
