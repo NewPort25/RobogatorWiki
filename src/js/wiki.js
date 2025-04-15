@@ -685,3 +685,33 @@ document.getElementById("backButton").addEventListener("click", function(event) 
     hideFullDescription();
     
 });
+
+
+function handleImage(img) {
+    const logHeight = () => {
+     alert(img.src);
+    };
+  
+    if (img.complete) {
+      logHeight(); // already loaded
+    } else {
+      img.onload = logHeight; // wait until loaded
+    }
+  }
+
+const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      mutation.addedNodes.forEach(node => {
+        if (node.tagName === "IMG") {
+          handleImage(node);
+        }
+  
+        // in case it's inside a div or container
+        if (node.querySelectorAll) {
+          node.querySelectorAll("img").forEach(handleImage);
+        }
+      });
+    });
+  });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
