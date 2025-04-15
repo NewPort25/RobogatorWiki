@@ -243,7 +243,7 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
     
     // Check share button
     var divFooterShare = '<div class="account_standard_license flv"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>';
-    if(view == "search") 
+    if(view == "search" || view == "tag") 
         divFooterShare = "";
 
     var html =
