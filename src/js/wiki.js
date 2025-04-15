@@ -377,6 +377,7 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     text = text.replace(/ROBOCODE\d+/g, replaceString);
     text = text.replace(/ROBOIMAGE\d+/g, replaceString);
     text = text.replace(/ROBONAVIGATION\w+/g, replaceString);
+    text = text.replace(/ROBOBUTTON\w+/g, replaceString);
     text = text.replace(/<br>/g, ' ');
 
     return text;
@@ -385,6 +386,7 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
 function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     
     const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
+    const size = 64;
 
     // Formate code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
@@ -406,6 +408,20 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
             } 
 
         });
+
+        out += '</div>';
+        return out;
+    });
+
+    text = text.replace(/ROBONABUTTON(\w+)/g, (match, word) => {
+        
+        var out = '<div class="mainSecondColor account_standard_button_panel">';
+
+        switch (word) {
+            case 'DEACTIVATE':
+                out += '<div class="account_standard_button">' + svgDeactivate(styleHighlight,size,size) + '</div>';
+                break;
+        }
 
         out += '</div>';
         return out;
