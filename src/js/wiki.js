@@ -373,7 +373,8 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     text = text.replace(/ROBOCODE\d+/g, replaceString);
     text = text.replace(/ROBOIMAGE\d+/g, replaceString);
     text = text.replace(/ROBONAVIGATION\w+/g, replaceString);
-    
+    text = text.replace(/<br>/g, ' ');
+
     return text;
 }
 
@@ -406,8 +407,8 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
         return out;
     });
 
-
-    //<div class="account_standard_navigation" style="color: ' + color + ';" ></div>
+    // Formate new line
+    text = text.replace(/<br>/g, '<div class="new"></div>');
 
     return text;
 }
