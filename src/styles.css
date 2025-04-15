@@ -281,15 +281,14 @@
 		}
 	}
 	.account_standard_button_panel{
-		border-radius: 15px;
-		padding: 30px;
 		margin-top: 15px;
 		margin-bottom: 15px;
-		display: inline-block;
 	}
 	.account_standard_button{
 		height: 64px;
 		width: 64px;
+		padding: 30px;
+		border-radius: 15px;
 	}
 	.account_standard_title_small{
 		margin-top: 0px;

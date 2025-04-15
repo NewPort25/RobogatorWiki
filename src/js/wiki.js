@@ -415,11 +415,11 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
 
     text = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
         
-        var out = '<div class="mainSecondColor account_standard_button_panel">';
+        var out = '<div class="account_standard_button_panel">';
 
         switch (word) {
             case 'DEACTIVATE':
-                out += '<div class="account_standard_button">' + svgDeactivate(styleHighlight,size,size) + '</div>';
+                out += '<div class="mainSecondColor  account_standard_button">' + svgDeactivate(styleHighlight,size,size) + '</div>';
                 break;
         }
 
