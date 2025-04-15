@@ -401,7 +401,6 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
 function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     
     const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
-    const size = 36;
 
     // Formatting code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
@@ -430,12 +429,12 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
 
     // Formatting button
     text = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
-        return '<div class="account_standard_button_panel"><div class="mainSecondColor account_standard_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div></div>';
+        return '<div class="account_standard_button_panel"><div class="mainSecondColor account_standard_button">' + robogatorSvgButton(word,styleHighlight,36,36) + '</div></div>';
     });
 
     // Formatting master
     if(licenseType == 0){
-        text = text.replace(/ROBOMASTER/g, 'This is only available with a Master Plan license');
+        text = text.replace(/ROBOMASTER/g, '<div class="tag_license_image">' + svgLogoExecutive(color,20,20) + '</div>'This is only available with a Master Plan license');
     } else {
         text = text.replace(/ROBOMASTER/g, '');
     }
