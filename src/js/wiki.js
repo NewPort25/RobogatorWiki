@@ -161,7 +161,7 @@ function loadCSS(url) {
     };
 }
 
-function articleStandard(id,title,topic,content,images,code,view){
+function articleStandard(id,title,topic,content,images,code,date,view){
 
     // Set font color for code
     var codeColor = COLORCSHARP;
@@ -206,7 +206,7 @@ function articleStandard(id,title,topic,content,images,code,view){
     return html;
 }
 
-function articleFullsize(id,title,topic,content,images,code,view){
+function articleFullsize(id,title,topic,content,images,code,date,view){
 
     // Set font color for code
     var codeColor = COLORCSHARP;
@@ -270,16 +270,19 @@ function loadJson(){
     // Scroll to top
     window.scrollTo(0, 0);
 
-    var counter = 0;
     var output = "";
+    var lastDate = 0;
     var tags = [];
     
     ARTICLES.forEach(item => {
         
-        // Show just newest accounts
+        // Show just the newest article
         if(counter < MAXNEWESTCOUNT){
-            output += articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code);
-            counter++;
+            if(lastDate < item.Date){
+                output = articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,item.Date);
+                lastDate = item.Date;
+                counter++;
+            }
         } 
 
         // Handle tags -> articel topics
@@ -288,7 +291,7 @@ function loadJson(){
         }
 
         // Sort A - Z
-        tags.sort();
+        //tags.sort();
 
     });
 
@@ -353,7 +356,7 @@ function loadFullDescription(idKey){
         // Just include accounts with the same tag in it
         if(item.Id.includes(idKey)){
             title = item.Title;
-            output = articleFullsize(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code);
+            output = articleFullsize(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,item.Date);
         }
     
     });
@@ -436,7 +439,7 @@ function loadAccountsForTagName(tag){
         
         // Just include accounts with the same tag in it
         if(item.Topic.includes(tag)){
-            output +=  articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,"tag");
+            output +=  articleStandard(item.Id,item.Title,item.Topic,item.Content,item.Images,item.Code,item.Date,"tag");
             counter++;
         }
     
@@ -466,7 +469,7 @@ function loadAccountsForSearchInput(){
         // Returns matching documents
         result.forEach(r => {
             if(counter < MAXSEARCHCOUNT){
-                output +=  articleStandard(r.item.Id,r.item.Title,r.item.Topic,r.item.Content,r.item.Images,r.item.Code,"search");
+                output +=  articleStandard(r.item.Id,r.item.Title,r.item.Topic,r.item.Content,r.item.Images,r.item.Code,item.Date,"search");
                 counter++;
             }
         });
