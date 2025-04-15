@@ -367,11 +367,12 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     const replaceString = ' ... ';
 
     // Remove ROBOCODE/IMAGE if at the end (possibly followed by whitespace)
-    text = text.replace(/(ROBOCODE\d+|ROBOIMAGE\d+)\s*$/, '');
+    text = text.replace(/(ROBOCODE\d+|ROBOIMAGE\d+|ROBONAVIGATION\w+)\s*$/, '');
     
     // Replace ROBOCODE/IMAGE everywhere else with ...
     text = text.replace(/ROBOCODE\d+/g, replaceString);
     text = text.replace(/ROBOIMAGE\d+/g, replaceString);
+    text = text.replace(/ROBOIMAGE\w+/g, replaceString);
     
     return text;
 }
@@ -384,6 +385,9 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     // Formate images
     text = text.replace(/ROBOIMAGE(\d+)/g, (match, number) => {return '<div class="mainThirdColor account_standard_image_panel"><img src="'+ 
         pathToArticleImages + images[number]  + '" ></div>'});
+
+    // Formate navigation
+    text = text.replace(/ROBONAVIGATION(\w+)/g, (match, word) => {return '<div class="account_standard_navigation_panel"><div class="account_standard_navigation" style="color: ' + color + ';" ></div></div>'});
 
     return text;
 }
