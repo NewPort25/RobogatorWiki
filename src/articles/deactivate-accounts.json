@@ -4,5 +4,6 @@
   "Rank":4,
   "Content":"To switch Accounts from active to inactive, you can use the smooth background processing Account deactivate feature.<br>First, go to the Accounts view. ROBONAVIGATIONACCOUNTS In the Accounts view, you will find the deactivate button. ROBOBUTTONDEACTIVATE The deactivate feature sets the status of the selected Accounts to inactive, which means they can't be executed and will be added to the inactive Accounts list. The actual deactivation of the Accounts is done in the background. The deactivation progress is displayed as a percentage below the button.<br>This feature is designed to handle a large number of Accounts at once.",
   "Images":["deactivate-accounts.png"],
-  "Code":[]
+  "Code":[],
+  "Date":20250415
 }
