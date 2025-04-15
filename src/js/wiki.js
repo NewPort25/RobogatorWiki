@@ -385,13 +385,14 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     const replaceString = ' ... ';
 
     // Remove ROBOCODE/IMAGE if at the end (possibly followed by whitespace)
-    text = text.replace(/(ROBOCODE\d+|ROBOIMAGE\d+|ROBONAVIGATION\w+)\s*$/, '');
+    text = text.replace(/(ROBOCODE\d+|ROBOIMAGE\d+|ROBONAVIGATION\w+|ROBOBUTTON\w+|ROBOMASTER)\s*$/, '');
     
     // Replace ROBOCODE/IMAGE everywhere else with ...
     text = text.replace(/ROBOCODE\d+/g, replaceString);
     text = text.replace(/ROBOIMAGE\d+/g, replaceString);
     text = text.replace(/ROBONAVIGATION\w+/g, replaceString);
     text = text.replace(/ROBOBUTTON\w+/g, replaceString);
+    text = text.replace(/ROBOMASTER/g, replaceString);
     text = text.replace(/<br>/g, ' ');
 
     return text;
@@ -402,14 +403,14 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
     const size = 36;
 
-    // Formate code
+    // Formatting code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
 
-    // Formate images
+    // Formatting images
     text = text.replace(/ROBOIMAGE(\d+)/g, (match, number) => {return '<div class="mainThirdColor account_standard_image_panel"><img src="'+ 
         pathToArticleImages + images[number]  + '" ></div>'});
 
-    // Formate navigation
+    // Formatting navigation
     text = text.replace(/ROBONAVIGATION(\w+)/g, (match, word) => {
         
         var out = '<div class="mainSecondColor account_standard_navigation_panel">';
@@ -427,12 +428,19 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
         return out;
     });
 
-    // Format button
+    // Formatting button
     text = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
         return '<div class="account_standard_button_panel"><div class="mainSecondColor account_standard_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div></div>';
     });
 
-    // Formate new line
+    // Formatting master
+    if(licenseType == 0){
+        text = text.replace(/ROBOMASTER/g, '<div class="new">This is only available with a Master Plan license</div>');
+    } else {
+        text = text.replace(/ROBOMASTER/g, '');
+    }
+   
+    // Formatting new line
     text = text.replace(/<br>/g, '<div class="new"></div>');
 
     return text;
