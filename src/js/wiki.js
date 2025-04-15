@@ -386,7 +386,7 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
 function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     
     const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
-    const size = 50;
+    const size = 36;
 
     // Formate code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
