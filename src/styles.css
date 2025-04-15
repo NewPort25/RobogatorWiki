@@ -260,7 +260,11 @@
 		.account_standard_image_panel img  {
 		  object-fit: cover;
 		}
-	  }
+		.account_standard_image_panel{
+			mask-image: linear-gradient(to right, black 80%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+		}
+	}
 	.account_standard_title_small{
 		margin-top: 0px;
 		font-size: 26px;
