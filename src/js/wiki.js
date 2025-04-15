@@ -186,26 +186,36 @@ function articleStandard(id,title,topic,content,images,code,date,view){
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = "";
+    
+
+    // Create speacial header 
+    var divTitleClass = "account_standard_title_small";
+    var divHeaderBackground = ""; 
+    if(code.length > 0 && (view == "search" || view == "tag")){
+        // Header for code
+        divTitleClass = "account_standard_title_large";
+        divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
+    } else if (content.include("ROBOBUTTON") && (view == "search" || view == "tag")){
+        // header for button description
+        const size = 24;
+        divTitleClass = "account_standard_title_for_button";
+        divHeaderBackground  = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
+            return '<div class="account_standard_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div>';
+        });
+    }
+
     var divFooterPreview = "";
     if(view == "search"){
         // Short text
         formatedContent = '<div class="account_standard_description_short">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
         divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
     } else if(view == "tag"){
-        // Short text
+        // Medium text
         formatedContent = '<div class="account_standard_description_medium">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
         divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
     } else {
         // Rich text
         formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor) + '</div>';
-    }
-
-    // Check for code to put it 
-    var divTitleClass = "account_standard_title_small";
-    var divHeaderBackground = "";
-    if(code.length > 0 && (view == "search" || view == "tag")){
-        divTitleClass = "account_standard_title_large";
-        divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
     }
 
     // Check share button
@@ -417,36 +427,32 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
         return out;
     });
 
+    // Format button
     text = text.replace(/ROBOBUTTON(\w+)/g, (match, word) => {
-        
-        var out = '<div class="account_standard_button_panel">';
-
-        switch (word) {
-            case 'DEACTIVATE':
-                out += '<div class="mainSecondColor  account_standard_button">' + svgDeactivate(styleHighlight,size,size) + '</div>';
-                break;
-            case 'REACTIVATE':
-                out += '<div class="mainSecondColor  account_standard_button">' + svgReactivate(styleHighlight,size,size) + '</div>';
-                break;
-            case 'DELETE':
-                out += '<div class="mainSecondColor  account_standard_button">' + svgDelete(styleHighlight,size,size) + '</div>';
-                break; 
-            case 'IMPORT':
-                out += '<div class="mainSecondColor  account_standard_button">' + svgImport(styleHighlight,size,size) + '</div>';
-                break;
-            case 'EXPORT':
-                out += '<div class="mainSecondColor  account_standard_button">' + svgExport(styleHighlight,size,size) + '</div>';
-                break;   
-        }
-
-        out += '</div>';
-        return out;
+        return '<div class="account_standard_button_panel"><div class="mainSecondColor account_standard_button">' + robogatorSvgButton(word,styleHighlight,size,size) + '</div></div>';
     });
 
     // Formate new line
     text = text.replace(/<br>/g, '<div class="new"></div>');
 
     return text;
+}
+
+function robogatorSvgButton(id,color,width,height){
+
+    switch (id) {
+        case 'DEACTIVATE':
+            return svgDeactivate(color,width,height);
+        case 'REACTIVATE':
+            return svgReactivate(color,width,height) ;
+        case 'DELETE':
+            return svgDelete(color,width,height);
+        case 'IMPORT':
+            return svgImport(color,width,height);
+        case 'EXPORT':
+            return svgExport(color,width,height);    
+    }
+    return "";
 }
 
 function formatedDate(dateInt){
