@@ -224,15 +224,7 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
         // Rich text
         formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
     }
-
-    // Check for code to put it 
-    var divTitleClass = "account_standard_title_small";
-    var divHeaderBackground = "";
-    if(code.length > 0 && view == "search"){
-        divTitleClass = "account_standard_title_large";
-        divHeaderBackground = '<div class="account_standard_image flv" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code flv" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
-    }
-
+    
     // Check share button
     var divFooterShare = '<div class="account_standard_license flv"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>';
     if(view == "search") 
@@ -240,8 +232,6 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
 
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container flv" onclick="loadFullDescription(\'' + id + '\')">' + 
-         divHeaderBackground +
-         '<div class="' + divTitleClass  + ' flv">' + title + '</div>' +
          '<div class="account_standard_description flv">' + formatedContent + '</div>' +
          '<div class="account_standard_tags flv">' + formatedTopic  + '</div>' +
          divFooterShare +
