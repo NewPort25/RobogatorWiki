@@ -1,0 +1,9 @@
+{
+  "Title":"Delete Accounts",
+  "Topic":"Accounts",
+  "Rank":8,
+  "Content":"To transfer Tasks between different Robogator instances, you can use the smooth background processing Account import and export feature.<br>First, go to the Accounts view. ROBONAVIGATIONACCOUNTS In the Accounts view, you will find the delete button. ROBOBUTTONDELETE The delete feature will delete all selected Robogator Accounts. Only inactive Accounts are deleteable. The actual deletion of the Accounts is done in the background. The deletion progress is displayed as a percentage below the button.<br>Nice to know, if you delete an Account by mistake, there is always a way to recreate it. The fact that the required disk space of an Account is so small, allows you to keep the Account in the so called Robogator graveyard without any major impact on disk space. But with the advantage of being able to recreate it at any time.<br>This feature is designed to handle a large number of Accounts at once.",
+  "Images":[],
+  "Code":[],
+  "Date":20250312
+}
