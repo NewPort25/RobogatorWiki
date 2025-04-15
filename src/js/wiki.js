@@ -693,7 +693,7 @@ function handleImage(img) {
         const maxHeight = 600 / ratio;
         if(img.parentElement){
             if (img.parentElement.classList.contains("account_standard_image_panel")) {
-                img.parentElement.style.maxHeight = maxHeight + "px";
+                img.parentElement.style.height = maxHeight + "px";
             }
         }
         
