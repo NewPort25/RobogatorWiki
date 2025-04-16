@@ -10,6 +10,7 @@ var SCROLL;
 
 // Code colors
 const COLORCODEBG = "#0e1111";
+const COLORDEFAULT = "#F4FDFF";
 const COLORCSHARP = "#FCB900";
 const COLORPOWERSHELL = "#8ED1FC";
 
@@ -179,9 +180,11 @@ function loadCSS(url) {
 function articleStandard(id,title,topic,content,images,code,date,view){
 
     // Set font color for code
-    var codeColor = COLORCSHARP;
+    var codeColor = COLORDEFAULT;
     if(topic.includes("Powershell"))
         codeColor = COLORPOWERSHELL;
+    if(topic.includes("C#"))
+        codeColor = COLORCSHARP;
 
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
@@ -238,9 +241,11 @@ function articleStandard(id,title,topic,content,images,code,date,view){
 function articleFullsize(id,title,topic,content,images,code,date,view){
 
     // Set font color for code
-    var codeColor = COLORCSHARP;
+    var codeColor = COLORDEFAULT;
     if(topic.includes("Powershell"))
         codeColor = COLORPOWERSHELL;
+    if(topic.includes("C#"))
+        codeColor = COLORCSHARP;
 
     var formatedTopic = '<div class="mainSecondColor tag flv" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
