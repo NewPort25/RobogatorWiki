@@ -279,6 +279,7 @@
 	}
 	.account_standard_image_panel img {
 		display: block;
+		cursor: pointer;
 	}
 	.account_standard_button_panel{
 		margin-top: 15px;
