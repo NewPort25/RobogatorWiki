@@ -278,7 +278,7 @@
 		-ms-overflow-style: none; 
 	}
 	.account_standard_image_panel::-webkit-scrollbar {
-	display: none;                /* Chrome, Safari */
+		display: none;                /* Chrome, Safari */
 	}
 	.account_standard_image_panel img {
 		display: block;
