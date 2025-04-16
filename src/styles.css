@@ -295,7 +295,6 @@
 		position: relative;
 		display: block;
 		height: auto;                   /* limits image height to viewport */
-		max-width: 90vw;
 		top: 0;
 		left: 50%;
 		transform: translate(-50%);
