@@ -286,6 +286,7 @@
 		max-height: 100%;
 		white-space: nowrap;
 		border-radius: 15px;
+		transform-origin: center center;
 	}
 	.account_standard_image_panel img:hover {
 		position: relative;
