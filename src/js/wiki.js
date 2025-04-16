@@ -703,7 +703,38 @@ function setFaviconFromSVG(svgString) {
   
     // Append the link to the head of the document
     document.head.appendChild(link);
-  }
+}
+
+function enableDragScroll(scrollWrapper) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+  
+    scrollWrapper.addEventListener('mousedown', (e) => {
+      isDown = true;
+      scrollWrapper.classList.add('dragging');
+      startX = e.pageX - scrollWrapper.offsetLeft;
+      scrollLeft = scrollWrapper.scrollLeft;
+    });
+  
+    scrollWrapper.addEventListener('mouseleave', () => {
+      isDown = false;
+      scrollWrapper.classList.remove('dragging');
+    });
+  
+    scrollWrapper.addEventListener('mouseup', () => {
+      isDown = false;
+      scrollWrapper.classList.remove('dragging');
+    });
+  
+    scrollWrapper.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollWrapper.offsetLeft;
+      const walk = (x - startX) * 2; // scroll speed
+      scrollWrapper.scrollLeft = scrollLeft - walk;
+    });
+}
 
 document.addEventListener("click", function() {
     
@@ -765,33 +796,3 @@ document.getElementById("backButton").addEventListener("click", function(event) 
     
 });
 
-function enableDragScroll(scrollWrapper) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-  
-    scrollWrapper.addEventListener('mousedown', (e) => {
-      isDown = true;
-      scrollWrapper.classList.add('dragging');
-      startX = e.pageX - scrollWrapper.offsetLeft;
-      scrollLeft = scrollWrapper.scrollLeft;
-    });
-  
-    scrollWrapper.addEventListener('mouseleave', () => {
-      isDown = false;
-      scrollWrapper.classList.remove('dragging');
-    });
-  
-    scrollWrapper.addEventListener('mouseup', () => {
-      isDown = false;
-      scrollWrapper.classList.remove('dragging');
-    });
-  
-    scrollWrapper.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - scrollWrapper.offsetLeft;
-      const walk = (x - startX) * 2; // scroll speed
-      scrollWrapper.scrollLeft = scrollLeft - walk;
-    });
-  }
