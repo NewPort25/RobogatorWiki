@@ -290,13 +290,13 @@
 	}
 	.account_standard_image_panel img:hover {
 		position: relative;
-		max-height: 90vh;                    /* limits image height to viewport */
+		display: block;
+		height: auto;                   /* limits image height to viewport */
 		max-width: 90vw;
 		top: 0;
 		left: 50%;
 		transform: scale(1);
 		z-index: 9999;
-		cursor: zoom-out;
 		box-shadow: 0 0 10px rgba(0,0,0,0.5);
 		background: white;
 	  }
