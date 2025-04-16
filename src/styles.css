@@ -279,7 +279,7 @@
 		-ms-overflow-style: none; 
 	}
 	.account_standard_image_panel::-webkit-scrollbar {
-	display: none;                /* Chrome, Safari */
+		display: none;                /* Chrome, Safari */
 	}
 	.account_standard_image_panel img {
 		display: block;
@@ -293,14 +293,16 @@
 		z-index: 1;
 	}
 	.account_standard_image_panel img:hover {
-		position: absolute;
-		z-index: 10;
+		position: relative;
 		height: auto;
-		width: auto;
-		max-height: 90vh;         /* optional: fit screen */
-		max-width: none;          /* allow full size */
+		max-height: 90vh;                    /* limits image height to viewport */
+		max-width: 90vw;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1);
+		z-index: 9999;
 		cursor: zoom-out;
-		box-shadow: 0 0 20px rgba(0,0,0,0.5);
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
 		background: white;
 	  }
 	.account_standard_button_panel{
