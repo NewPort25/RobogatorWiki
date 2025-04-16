@@ -377,6 +377,7 @@ function loadFullDescription(idKey){
     
     document.getElementById("accountFullview").innerHTML = output;
 
+    // Add drag effect to images
     document.querySelectorAll('.account_standard_image_panel').forEach(img => {
         enableDragScroll(img); 
     });
