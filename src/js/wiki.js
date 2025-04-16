@@ -402,6 +402,9 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     
     const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
 
+    // Formatting new line
+    text = text.replace(/<br>/g, '<div class="new"></div>');
+    
     // Formatting code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
 
@@ -439,9 +442,6 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
         text = text.replace(/ROBOMASTER/g, '');
     }
    
-    // Formatting new line
-    text = text.replace(/<br>/g, '<div class="new"></div>');
-
     return text;
 }
 
