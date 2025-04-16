@@ -2,7 +2,7 @@
   "Title":"Run Task in background",
   "Topic":"Platform",
   "Rank":9,
-  "Content":"It is possible to run a Task in the background as a service. This means you can run a Task without showing the Robogator GUI. To do this you need to start Robogator with a Task uuid as parameter via The Windows Command Prompt, also known as cmd.exe. ROBOCODE0 To run a Task with the Task uuid d28cd9b1-3eac-43de-85db-f67098f9fd93 in the background, see the full example in Windows Command Prompt. ROBOIMAGE0 ROBOMASTER",
+  "Content":"It is possible to run a Task in the background as a service. This means you can run a Task without showing the Robogator GUI. To do this you need to start Robogator with a Task uuid as parameter via the Windows Command Prompt, also known as cmd.exe. ROBOCODE0 To run a Task with the Task uuid d28cd9b1-3eac-43de-85db-f67098f9fd93 in the background, see the full example in the Windows Command Prompt. ROBOIMAGE0 ROBOMASTER",
   "Images":["run-task-in-background.png"],
   "Code":["C:\\Program Files\\Robogator\\Robogator Desktop\\Robogator.exe"],
   "Date":20250416
