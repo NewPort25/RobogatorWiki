@@ -29,7 +29,7 @@ const searchByTagsPlaceholder = "Search by topic";
 const backPlaceholder ="Back to wiki";
 const backMorePlaceholder ="See more available wiki articles";
 const foundByTagPlaceholder = "All wiki articles with topic ";
-const foundNothingPlaceholder = "Nothing found in the wiki that matches your search criteria. Please try to modify your search text, hopefully this will help.";
+const foundNothingPlaceholder = "Nothing found in the wiki that matches your search phrase. Please try modifying your search phrase, hopefully this will help.";
 const startTypingPlaceholder = "What are you looking for...";
 
 const cleanUrl = window.location.origin + window.location.pathname;
