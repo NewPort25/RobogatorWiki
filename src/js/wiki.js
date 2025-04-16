@@ -384,8 +384,6 @@ function loadFullDescription(idKey){
         });
     }, 1000);
 
-    
-     
 }
 
 function replaceRobogatorPlaceholdersWithEllipsis(text) {
