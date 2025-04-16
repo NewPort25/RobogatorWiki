@@ -279,6 +279,7 @@
 	}
 	.account_standard_image_panel.expanded {
 		overflow-x: visible;  /* Allow vertical scrolling when image is expanded */
+		overflow-y: visible;
 	  }
 	.account_standard_image_panel::-webkit-scrollbar {
 		display: none;                /* Chrome, Safari */
