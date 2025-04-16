@@ -278,7 +278,7 @@
 		-ms-overflow-style: none; 
 	}
 	.account_standard_image_panel.expanded {
-		overflow-y: visible;  /* Allow vertical scrolling when image is expanded */
+		overflow-x: visible;  /* Allow vertical scrolling when image is expanded */
 	  }
 	.account_standard_image_panel::-webkit-scrollbar {
 		display: none;                /* Chrome, Safari */
