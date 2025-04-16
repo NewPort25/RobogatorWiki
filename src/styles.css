@@ -273,9 +273,12 @@
 		margin-bottom: 15px;
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
-		overflow: hidden;
 		mask-image: linear-gradient(to right, white 90%, transparent 100%);
 		-webkit-mask-image: linear-gradient(to right, white 90%, transparent 100%);
+		overflow: hidden;
+	}
+	.account_standard_image_panel img {
+		display: block;
 	}
 	.account_standard_button_panel{
 		margin-top: 15px;
