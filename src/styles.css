@@ -288,7 +288,7 @@
 		border-radius: 15px;
 	}
 	.account_standard_image_panel img:hover {
-		position: absolute;
+		position: relative;
 		height: auto;
 		max-height: 90vh;                    /* limits image height to viewport */
 		max-width: 90vw;
