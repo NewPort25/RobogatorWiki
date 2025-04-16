@@ -409,7 +409,7 @@
 	.account_fullview_description{
 		margin-top: 10px;
 		margin-bottom: 15px;
-		font-size: 15px;
+		font-size: 16px;
 		line-height: 1.5;
 	}
 	.account_fullview_license{
@@ -427,7 +427,7 @@
 		border-radius: 15px;
 		max-width: 660px;
 		word-break: break-word;
-			font-size: 14px;
+		font-size: 16px;
 	}
 	.account_fullview_back_button{
 		padding: 0 25px 5px; 
