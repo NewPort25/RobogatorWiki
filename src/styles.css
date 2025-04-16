@@ -287,6 +287,19 @@
 		white-space: nowrap;
 		border-radius: 15px;
 	}
+	.account_standard_image_panel img:hover {
+		position: absolute;
+		height: auto;
+		max-height: 90vh;                    /* limits image height to viewport */
+		max-width: 90vw;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1);
+		z-index: 9999;
+		cursor: zoom-out;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		background: white;
+	  }
 	.account_standard_button_panel{
 		margin-top: 15px;
 		margin-bottom: 15px;
