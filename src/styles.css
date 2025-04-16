@@ -287,8 +287,6 @@
 		max-height: 100%;
 		white-space: nowrap;
 		border-radius: 15px;
-		transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-		cursor: zoom-in;
 		position: relative;
 		z-index: 1;
 	}
