@@ -1,0 +1,9 @@
+{
+  "Title":"Access current Account uuid in C# script",
+  "Topic":"C# scripting",
+  "Rank":8,
+  "Content":"To get the Account uuid of the current Task during script runtime as a string variable. Use the following method: ROBOCODE0 This will get a string variable like 75839be4-89e9-4c00-b507-e7e9418e3e62.",
+  "Images":[],
+  "Code":["Script.CurrentAccountUuid;"],
+  "Date":20250218
+}
