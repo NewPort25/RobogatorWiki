@@ -1,0 +1,9 @@
+{
+  "Title":"Use of clickable links in Robogator Chat messages",
+  "Topic":"C# scripting",
+  "Rank":3,
+  "Content":"It is often wisely to add to a static text link in a Chat message a one click action. This is possible for web and local file links. Just use % at the start and at the end of the link in the Chat message. Robogator knows automatically by itself when to open the standard browser to show a web link, or open the explorer to display a folder, or the standard app to open the linked file. ROBOCODE0 This enriched string produces the following Chat message with two clickable links inside. ROBOIMAGE0",
+  "Images":["use-of-clickable-links-in-robogator-chat-messages-csharp.png"],
+  "Code":["Console.WriteLine(@"Open the web link %https://robogator.io% or a local directory %C:\temp%");"],
+  "Date":20250416
+}
