@@ -273,7 +273,7 @@
 		margin-bottom: 15px;
 		width: 100%;                   /* or any fixed width */
 		overflow-x: auto;
-		        /* hide vertical overflow */
+		overflow-y: hidden;       /* hide vertical overflow */
 		scrollbar-width: none;        /* Firefox */
 		-ms-overflow-style: none; 
 	}
