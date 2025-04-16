@@ -273,7 +273,7 @@
 		margin-bottom: 15px;
 		width: 100%;                   /* or any fixed width */
 		overflow-x: auto;
-		overflow-y: hidden;           /* hide vertical overflow */
+		        /* hide vertical overflow */
 		scrollbar-width: none;        /* Firefox */
 		-ms-overflow-style: none; 
 	}
@@ -286,7 +286,6 @@
 		max-height: 100%;
 		white-space: nowrap;
 		border-radius: 15px;
-		transition: transform 0.3s ease;
 		transform-origin: center center;
 	}
 	.account_standard_image_panel img:hover {
@@ -296,10 +295,7 @@
 		max-width: 90vw;
 		top: 0;
 		left: 50%;
-		transform: translate(0);
-		z-index: 9999;
-		box-shadow: 0 0 10px rgba(0,0,0,0.5);
-		background: white;
+		transform: translate(-50%);
 	  }
 	.account_standard_button_panel{
 		margin-top: 15px;
