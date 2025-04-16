@@ -255,7 +255,7 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
     formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
 
     var html =
-      '<div idKey="' + id + '" class="mainColor mainTextColor account_fullview_container flv" onclick="loadFullDescription(\'' + id + '\')">' + 
+      '<div idKey="' + id + '" class="mainColor mainTextColor account_fullview_container flv">' + 
          '<div class="account_fullview_description flv">' + formatedContent + '</div>' +
          '<div class="account_standard_tags flv">' + formatedTopic  + '</div>' +
          '<div class="account_standard_license flv"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>' +
