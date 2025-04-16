@@ -291,7 +291,7 @@
 		z-index: 1;
 	}
 	.account_standard_image_panel img:hover {
-		position: relative;
+		position: absolute;
 		height: auto;
 		max-height: 90vh;                    /* limits image height to viewport */
 		max-width: 90vw;
