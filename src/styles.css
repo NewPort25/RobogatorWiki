@@ -286,19 +286,12 @@
 		max-height: 100%;
 		white-space: nowrap;
 		border-radius: 15px;
+		transform-origin: center center;
 	}
 	.account_standard_image_panel img:hover {
-		position: absolute;
-		height: auto;
-		max-height: 90vh;                    /* limits image height to viewport */
-		max-width: 90vw;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) scale(1);
-		z-index: 9999;
+		transform: scale(2); /* or 1.5, 2.5, etc. */
+		z-index: 10;
 		cursor: zoom-out;
-		box-shadow: 0 0 10px rgba(0,0,0,0.5);
-		background: white;
 	  }
 	.account_standard_button_panel{
 		margin-top: 15px;
