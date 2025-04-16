@@ -406,10 +406,10 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     text = text.replace(/<br>/g, '<div class="new"></div>');
     
     // Formatting code
-    text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="mainSecondColor account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
+    text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
 
     // Formatting images
-    text = text.replace(/ROBOIMAGE(\d+)/g, (match, number) => {return '<div class="account_standard_image_panel"><img src="'+ 
+    text = text.replace(/ROBOIMAGE(\d+)/g, (match, number) => {return '<div class="mainSecondColor account_standard_image_panel"><img src="'+ 
         pathToArticleImages + images[number]  + '" ></div>'});
 
     // Formatting navigation
