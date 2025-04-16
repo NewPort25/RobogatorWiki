@@ -759,3 +759,30 @@ document.getElementById("backButton").addEventListener("click", function(event) 
     hideFullDescription();
     
 });
+
+const scrollWrapper = document.querySelector('.account_standard_image_panel');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+scrollWrapper.addEventListener('mousedown', (e) => {
+  isDown = true;
+  scrollWrapper.classList.add('dragging');
+  startX = e.pageX - scrollWrapper.offsetLeft;
+  scrollLeft = scrollWrapper.scrollLeft;
+});
+scrollWrapper.addEventListener('mouseleave', () => {
+  isDown = false;
+  scrollWrapper.classList.remove('dragging');
+});
+scrollWrapper.addEventListener('mouseup', () => {
+  isDown = false;
+  scrollWrapper.classList.remove('dragging');
+});
+scrollWrapper.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - scrollWrapper.offsetLeft;
+  const walk = (x - startX) * 2; // scroll speed
+  scrollWrapper.scrollLeft = scrollLeft - walk;
+});
