@@ -760,7 +760,7 @@ document.getElementById("backButton").addEventListener("click", function(event) 
     
 });
 
-
+/**
 function handleImage(img) {
     const logHeight = () => {
         const ratio = img.naturalWidth / img.naturalHeight ;
@@ -796,3 +796,4 @@ const observer = new MutationObserver(mutations => {
   });
   
   observer.observe(document.body, { childList: true, subtree: true });
+*/
