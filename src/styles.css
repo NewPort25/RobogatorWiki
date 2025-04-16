@@ -269,25 +269,13 @@
 		margin-bottom: 15px;
 	}
 	.account_standard_image_panel{
-		border-radius: 15px;
 		margin-top: 15px;
 		margin-bottom: 15px;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
 		overflow: hidden;
-	}
-	.account_standard_image_panel img {
-		display: block;
-	}
-	@media (max-width: 720px) {
-		.account_standard_image_panel img  {
-		  object-fit: cover;
-		  width: auto;
-		}
-		.account_standard_image_panel{
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-			mask-image: linear-gradient(to right, white 0, transparent 100%);
-			-webkit-mask-image: linear-gradient(to right, white 0, transparent 100%);
-		}
+		mask-image: linear-gradient(to right, white 90%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to right, white 90%, transparent 100%);
 	}
 	.account_standard_button_panel{
 		margin-top: 15px;
