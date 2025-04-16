@@ -1,0 +1,9 @@
+{
+  "Title":"Access current Instance uuid in C# script",
+  "Topic":"C# scripting",
+  "Rank":10,
+  "Content":"To get the Instance uuid of the current Task Instance during script runtime as a string variable. Use the following method: ROBOCODE0 This will get a string variable like fbfa8388-7a23-46a9-a318-7f86f4b96955.",
+  "Images":[],
+  "Code":["Script.CurrentInstanceUuid;"],
+  "Date":20250218
+}
