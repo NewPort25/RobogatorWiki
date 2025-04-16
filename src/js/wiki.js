@@ -711,11 +711,14 @@ function enableDragScroll(scrollWrapper) {
     let scrollLeft;
   
     scrollWrapper.addEventListener('mousedown', (e) => {
-      isDown = true;
-      scrollWrapper.classList.add('dragging');
-      startX = e.pageX - scrollWrapper.offsetLeft;
-      scrollLeft = scrollWrapper.scrollLeft;
-    });
+        // ✅ Ignore drags starting directly on an image
+        if (e.target.tagName.toLowerCase() === 'img') return;
+      
+        isDown = true;
+        scrollWrapper.classList.add('dragging');
+        startX = e.pageX - scrollWrapper.offsetLeft;
+        scrollLeft = scrollWrapper.scrollLeft;
+      });
   
     scrollWrapper.addEventListener('mouseleave', () => {
       isDown = false;
