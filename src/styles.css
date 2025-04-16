@@ -276,6 +276,7 @@
 		overflow-y: hidden;       /* hide vertical overflow */
 		scrollbar-width: none;        /* Firefox */
 		-ms-overflow-style: none; 
+		transition: transform 0.2s ease;
 	}
 	.account_standard_image_panel.expanded {
 		overflow-x: visible;  /* Allow vertical scrolling when image is expanded */
