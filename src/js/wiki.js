@@ -29,7 +29,7 @@ const searchByTagsPlaceholder = "Search by topic";
 const backPlaceholder ="Back to wiki";
 const backMorePlaceholder ="See more available wiki articles";
 const foundByTagPlaceholder = "All wiki articles with topic ";
-const foundNothingPlaceholder = "The cosmos is infinite, Robogator couldn't find anything near enough to match your search term by now. There must be something many light years away, for sure.";
+const foundNothingPlaceholder = "Nothing found in the wiki that matches your search criteria. Please try to modify your search text, hopefully this will help.";
 const startTypingPlaceholder = "What are you looking for...";
 
 const cleanUrl = window.location.origin + window.location.pathname;
