@@ -273,8 +273,8 @@
 		margin-bottom: 15px;
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
-		mask-image: linear-gradient(to right, white 75%, transparent 100%);
-		-webkit-mask-image: linear-gradient(to right, white 75%, transparent 100%);
+		mask-image: linear-gradient(to right, white 0, transparent 100%);
+		-webkit-mask-image: linear-gradient(to right, white 0, transparent 100%);
 		overflow: hidden;
 	}
 	.account_standard_image_panel img {
