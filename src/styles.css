@@ -269,6 +269,7 @@
 		margin-bottom: 15px;
 	}
 	.account_standard_image_panel{
+		position: relative;
 		margin-top: 15px;
 		margin-bottom: 15px;
 		width: 100%;                   /* or any fixed width */
@@ -286,12 +287,21 @@
 		max-height: 100%;
 		white-space: nowrap;
 		border-radius: 15px;
-		transform-origin: center center;
+		transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+		cursor: zoom-in;
+		position: relative;
+		z-index: 1;
 	}
 	.account_standard_image_panel img:hover {
-		transform: scale(2); /* or 1.5, 2.5, etc. */
+		position: absolute;
 		z-index: 10;
+		height: auto;
+		width: auto;
+		max-height: 90vh;         /* optional: fit screen */
+		max-width: none;          /* allow full size */
 		cursor: zoom-out;
+		box-shadow: 0 0 20px rgba(0,0,0,0.5);
+		background: white;
 	  }
 	.account_standard_button_panel{
 		margin-top: 15px;
