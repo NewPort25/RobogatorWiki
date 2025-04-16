@@ -1,0 +1,9 @@
+{
+  "Title":"Access current Task uuid in C# script",
+  "Topic":"C# scripting",
+  "Rank":9,
+  "Content":"To get the Task uuid during script runtime as a string variable. Use the following method: ROBOCODE0 This will get a string variable like 888cec5b-6615-4e3d-80ed-8a328a4f71ba.",
+  "Images":[],
+  "Code":["Script.CurrentTaskUuid;"],
+  "Date":20250218
+}
