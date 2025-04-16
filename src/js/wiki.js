@@ -327,23 +327,25 @@ function loadJson(){
         element.classList.replace("hidden", "visible");
     });
 
-    // Add full size hover effect
-    document.querySelectorAll('.account_standard_image_panel').forEach(scrollWrapper => {
-        scrollWrapper.addEventListener('mouseenter', () => {
-          // Add the 'expanded' class to allow vertical overflow when hovered
-          scrollWrapper.classList.add('expanded');
-        });
-      
-        scrollWrapper.addEventListener('mouseleave', () => {
-          // Remove the 'expanded' class when hover ends
-          scrollWrapper.classList.remove('expanded');
-        });
-    });
-    
     // If task id exists load this task
     if(accountIdKey != null){
         // Open in detail view
         loadFullDescription(accountIdKey);
+    } else {
+        
+        // Add full size hover effect
+        document.querySelectorAll('.account_standard_image_panel').forEach(scrollWrapper => {
+            scrollWrapper.addEventListener('mouseenter', () => {
+            // Add the 'expanded' class to allow vertical overflow when hovered
+            scrollWrapper.classList.add('expanded');
+            });
+        
+            scrollWrapper.addEventListener('mouseleave', () => {
+            // Remove the 'expanded' class when hover ends
+            scrollWrapper.classList.remove('expanded');
+            });
+        });
+    
     }
 }
 
