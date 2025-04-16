@@ -271,22 +271,20 @@
 	.account_standard_image_panel{
 		margin-top: 15px;
 		margin-bottom: 15px;
-		height: 50px;
-		position: relative;
-		overflow: hidden;
+		width: 100%;                   /* or any fixed width */
+		overflow-x: auto;
+		overflow-y: hidden;           /* hide vertical overflow */
+		scrollbar-width: none;        /* Firefox */
+		-ms-overflow-style: none; 
 	}
-	.account_standard_image_inner{
-		position: absolute;
-		width: 100%;
-		height: auto;
-		overflow-x: scroll;
-		top: 0;
-		left: 0;
+	.account_standard_image_panel::-webkit-scrollbar {
+	display: none;                /* Chrome, Safari */
 	}
 	.account_standard_image_panel img {
-		border-radius: 15px;
 		display: block;
-		overflow: hidden;
+		height: auto;
+		max-height: 100%;
+		white-space: nowrap;
 	}
 	.account_standard_button_panel{
 		margin-top: 15px;
