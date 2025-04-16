@@ -280,7 +280,7 @@
 		object-fit: contain; /* or 'contain' depending on your goal */
 		display: block;
 	}
-	@media (max-width: 720px) {
+	@media (max-width: 759px) {
 		.account_standard_image_panel img  {
 		  object-fit: cover;
 		  width: auto;
