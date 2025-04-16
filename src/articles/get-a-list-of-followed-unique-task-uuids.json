@@ -4,6 +4,6 @@
   "Rank":11,
   "Content":"It is possible to get a unique list of all Task uuid's which this Task will trigger after it is finished. To access any followed Task uuid loop through the array with the following method: ROBOCODE0 This will create some Chat messages with all Followed by Task uuid's as content: ROBOIMAGE0 A unique list means that if entire Accounts are set to Followed by links, links that have already been separately triggered as Followed by link Tasks will not appear multiple times in the list, even if they are also present in the Followed by link Accounts.",
   "Images":["get-a-list-of-followed-unique-task-uuids.png"],
-  "Code":["foreach (string uuid in followed) {<br>  Console.WriteLine(uuid);<br>}"],
+  "Code":["foreach (string uuid in followed) {<br>&emsp;Console.WriteLine(uuid);<br>}"],
   "Date":20250224
 }
