@@ -191,7 +191,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
     var divHeaderBackground = ""; 
     if(code.length > 0 && (view == "search" || view == "tag")){
         // Header for code
-        divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
+        divHeaderBackground = '<div class="account_standard_image" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code_short" style="color: ' + codeColor + ';" >' + code[0] + '</div></div>'
         divTitleClass = "account_standard_title_large";
     } else if (content.includes("ROBOBUTTON") && (view == "search" || view == "tag")){
         // header for button description
