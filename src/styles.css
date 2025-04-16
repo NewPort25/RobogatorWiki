@@ -271,15 +271,22 @@
 	.account_standard_image_panel{
 		margin-top: 15px;
 		margin-bottom: 15px;
-		border-top-left-radius: 15px;
-		border-bottom-left-radius: 15px;
-		mask-image: linear-gradient(to right, white 0, transparent 100%);
-		-webkit-mask-image: linear-gradient(to right, white 0, transparent 100%);
+		height: 50px;
+		position: relative;
 		overflow: hidden;
 	}
+	.account_standard_image_inner{
+		position: absolute;
+		width: 100%;
+		height: auto;
+		overflow-y: scroll;
+		top: 0;
+		left: 0;
+	}
 	.account_standard_image_panel img {
+		border-radius: 15px;
 		display: block;
-		cursor: pointer;
+		overflow: hidden;
 	}
 	.account_standard_button_panel{
 		margin-top: 15px;
