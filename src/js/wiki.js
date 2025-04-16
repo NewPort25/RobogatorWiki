@@ -377,10 +377,14 @@ function loadFullDescription(idKey){
     
     document.getElementById("accountFullview").innerHTML = output;
 
-    // Add drag image effect
-    document.querySelectorAll('.accounts_standard_image_panel').forEach(img => {
-        enableDragScroll(img); 
-    });
+    setTimeout(() => {
+       // Add drag image effect
+        document.querySelectorAll('.accounts_standard_image_panel').forEach(img => {
+            enableDragScroll(img); 
+        });
+    }, 1000);
+
+    
      
 }
 
