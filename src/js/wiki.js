@@ -480,19 +480,12 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color, type
         return '<div class="account_standard_button_panel"><div class="mainSecondColor account_standard_button">' + robogatorSvgButton(word,styleHighlight,36,36) + '</div></div>';
     });
 
-    // Formatting master
-    if(licenseType == 0){
-        
-        // At the start
-        text = text.replace(/^ROBOMASTER/, '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license.<div class="new"></div>');
+    // Formatting master at the start
+    text = text.replace(/^ROBOMASTER/, '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license.<div class="new"></div>');
 
-        // Any where else
-        text = text.replace(/ROBOMASTER/g, '<div class="new"></div><div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license.');
+    // Formatting master any where else
+    text = text.replace(/ROBOMASTER/g, '<div class="new"></div><div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license.');
 
-    } else {
-        text = text.replace(/ROBOMASTER/g, '');
-    }
-   
     return text;
 }
 
