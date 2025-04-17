@@ -9,7 +9,7 @@ var HEIGHT;
 var SCROLL;
 
 // Code colors
-const COLORCODEBG = "#0e1111";
+const COLORCODEBG =  "#000000"; //"#0e1111";
 const COLORDEFAULT = "#F4FDFF";
 const COLORCSHARP = "#FCB900";
 const COLORPOWERSHELL = "#8ED1FC";
