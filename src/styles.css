@@ -168,6 +168,9 @@
 		color: currentColor; /* Changes color for visited links */
 		text-decoration: none; /* Removes underline */
 	}
+	.info_link{
+		font-size: 16px !important;
+	}
 	.indicator_on{
 		background-color: #f76100;
 	}
