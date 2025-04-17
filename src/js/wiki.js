@@ -439,7 +439,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color, type
     // Formatting code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {
 
-        const typeDiv = "";
+        var typeDiv = "";
         if(type != null)
             typeDiv = '<div class="mainTextDisabledColor account_standard_code_type">' + type + '</div>';
 
