@@ -2,7 +2,7 @@
   "Title":"Access Task Parameters in C# script",
   "Topic":"C# scripting",
   "Rank":5,
-  "Content":"This method returns the value of the Parameter named TaskParameter at runtime: ROBOCODE0 This shows how the typed Parameter value is accessible in the script. ROBOIMAGE0 To get a Parameter value as string during the Task script runtime, use the following method: ROBOCODE1 This method returns the string Hello World!. Parameters are always read only, so you are not able to set them to a new value during the Task script runtime.",
+  "Content":"This method returns the value of the Parameter named TaskParameter: ROBOCODE0 This shows how the typed Parameter value is accessible in the script. ROBOIMAGE0 To get a Parameter value as string during the Task script runtime, use the following method: ROBOCODE1 This method returns the string Hello World!. Parameters are always read only, so you are not able to set them to a new value during the Task script runtime.",
   "Images":["access-task-parameters-in-csharp-script.png"],
   "Code":["param[\"TaskParameter\"];","Console.WriteLine(param[\"TaskParameter\");"],
   "Date":20250220
