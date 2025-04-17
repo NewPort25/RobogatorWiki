@@ -267,6 +267,13 @@
 		padding: 30px;
 		margin-top: 15px;
 		margin-bottom: 15px;
+		position: relative;
+	}
+	.account_standard_code_type{
+		font-size: 14px;
+		position: absolute;
+		right: 30px;
+		top: 15px;
 	}
 	.account_standard_image_panel{
 		margin-top: 15px;

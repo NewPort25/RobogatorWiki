@@ -216,7 +216,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         formatedContent = '<div class="account_standard_description_medium">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
     } else {
         // Rich text
-        formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor) + '</div>';
+        formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor, null) + '</div>';
     }
 
     // Body
@@ -235,17 +235,20 @@ function articleFullsize(id,title,topic,content,images,code,date,view){
 
     // Set font color for code
     var codeColor = COLORDEFAULT;
+    var codeLanguage = "Code";
     if(topic.includes("Powershell"))
         codeColor = COLORPOWERSHELL;
+        codeLanguage = "Powershell";
     if(topic.includes("C#"))
         codeColor = COLORCSHARP;
+        codeLanguage = "C#";
 
     var formatedTopic = '<div class="mainSecondColor tag flv" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
     var formatedContent = "";
    
     // Rich text
-    formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor);
+    formatedContent = replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor, codeLanguage);
 
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_fullview_container flv">' + 
@@ -426,7 +429,7 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     return text;
 }
 
-function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
+function replaceRobogatorPlaceholdersWithContent(text, images, code, color, type) {
     
     const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
 
@@ -434,7 +437,14 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
     text = text.replace(/<br>/g, '<div class="new"></div>');
     
     // Formatting code
-    text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div></div>'});
+    text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {
+
+        const typeDiv = "";
+        if(type != null)
+            typeDiv = '<div class="mainTextDisabledColor account_standard_code_type">' + type + '</div>';
+
+        return '<div class="account_standard_code_panel" style="background-color:' + COLORCODEBG + ';"><div class="account_standard_code" style="color: ' + color + ';" >' + code[number] + '</div>' + typeDiv + '</div>'
+    });
 
     // Formatting images
     text = text.replace(/ROBOIMAGE(\d+)/g, (match, number) => {return '<div class="mainColor account_standard_image_panel"><img src="'+ 
