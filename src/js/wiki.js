@@ -441,7 +441,8 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color, type
     const navigation =  ["Topics","Accounts","Tasks","Trails","Keys","Settings"];
 
     // Formatting new line
-    text = text.replace(/<br>/g, '<div class="new"></div>');
+    const newLine = '<div class="new"></div>';
+    text = text.replace(/<br>/g, newLine);
     
     // Formatting code
     text = text.replace(/ROBOCODE(\d+)/g, (match, number) => {
@@ -483,7 +484,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color, type
     // Formatting master
     const masterMessage = '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This feature is only available with a Master Plan license.<div class="new"></div>';
     text = text.replace(/^ROBOMASTER/, masterMessage); // At the start
-    text = text.replace(/ROBOMASTER/g, '<div class="new"></div>' + masterMessage); // Any where else
+    text = text.replace(/ROBOMASTER/g, newLine + masterMessage); // Any where else
 
     return text;
 }
