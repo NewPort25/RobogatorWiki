@@ -4,6 +4,6 @@
   "Rank":12,
   "Content":"It is possible to get a unique list of all neighbor Task uuid's of the current Account. ROBOCODE0 To access any neighbor Task uuid, loop through the array with the following method: ROBOCODE1 This will create some Chat messages with all neighbor Task uuid's of the current Account as content: ROBOIMAGE0 A neighbor Task is defined as all the Tasks in the Account exept to the executing Task itself.",
   "Images":["get-a-list-of-all-neighbor-task-uuids-of-the-current-account-csharp.png"],
-  "Code":["neighborTasks","foreach (string uuid in neighborTasks)<br>&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(uuid);<br>}"],
+  "Code":["neighborTasks","foreach (string uuid in neighborTasks) {<br>&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(uuid);<br>}"],
   "Date":20250224
 }
