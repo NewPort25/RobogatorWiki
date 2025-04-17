@@ -179,15 +179,17 @@ function loadCSS(url) {
 
 function articleStandard(id,title,topic,content,images,code,date,view){
 
-     // Set font color for code
-     var codeColor = COLORDEFAULT;
-     var codeLanguage = "Code";
-     if(topic.includes("Powershell"))
-         codeColor = COLORPOWERSHELL;
-         codeLanguage = "Powershell";
-     if(topic.includes("C#"))
-         codeColor = COLORCSHARP;
-         codeLanguage = "C#";
+    // Set font color and code language for displayed code
+    var codeColor = COLORDEFAULT;
+    var codeLanguage = "Code";
+    if(topic.includes("Powershell")){
+        codeColor = COLORPOWERSHELL;
+        codeLanguage = "Powershell";
+    }
+    if(topic.includes("C#")){
+        codeColor = COLORCSHARP;
+        codeLanguage = "C#";
+    }
 
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
@@ -236,15 +238,17 @@ function articleStandard(id,title,topic,content,images,code,date,view){
 
 function articleFullsize(id,title,topic,content,images,code,date,view){
 
-    // Set font color for code
+    // Set font color and code language for displayed code
     var codeColor = COLORDEFAULT;
     var codeLanguage = "Code";
-    if(topic.includes("Powershell"))
+    if(topic.includes("Powershell")){
         codeColor = COLORPOWERSHELL;
         codeLanguage = "Powershell";
-    if(topic.includes("C#"))
+    }
+    if(topic.includes("C#")){
         codeColor = COLORCSHARP;
         codeLanguage = "C#";
+    }
 
     var formatedTopic = '<div class="mainSecondColor tag flv" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
