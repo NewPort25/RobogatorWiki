@@ -3,7 +3,7 @@
   "Topic":"C# scripting",
   "Rank":4,
   "Content":"If you want to highlight a part of a string in bold letters. Just use * at the start and at the end of the part in the Chat message. ROBOCODE0 This example above generates a single Robogator Chat message with Hello World! as content and World! is in bold letters. ROBOIMAGE0",
-  "Images":["use-of-bold-text-in-robogator-chat-messages.png"],
+  "Images":["use-of-bold-text-in-robogator-chat-messages-csharp.png"],
   "Code":["Console.WriteLine(\"Hello *World!* is bold\");"],
   "Date":20250224
 }
