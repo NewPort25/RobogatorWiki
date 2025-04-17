@@ -179,12 +179,15 @@ function loadCSS(url) {
 
 function articleStandard(id,title,topic,content,images,code,date,view){
 
-    // Set font color for code
-    var codeColor = COLORDEFAULT;
-    if(topic.includes("Powershell"))
-        codeColor = COLORPOWERSHELL;
-    if(topic.includes("C#"))
-        codeColor = COLORCSHARP;
+     // Set font color for code
+     var codeColor = COLORDEFAULT;
+     var codeLanguage = "Code";
+     if(topic.includes("Powershell"))
+         codeColor = COLORPOWERSHELL;
+         codeLanguage = "Powershell";
+     if(topic.includes("C#"))
+         codeColor = COLORCSHARP;
+         codeLanguage = "C#";
 
     var formatedTopic = '<div class="mainSecondColor tag" onclick="loadAccountsForTagName(\''+  topic + '\')" style="color: ' + styleHighlight + ' ">' + topic + '</div>';
 
@@ -216,7 +219,7 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         formatedContent = '<div class="account_standard_description_medium">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
     } else {
         // Rich text
-        formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor, null) + '</div>';
+        formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor, codeLanguage) + '</div>';
     }
 
     // Body
