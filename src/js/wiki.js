@@ -9,7 +9,7 @@ var HEIGHT;
 var SCROLL;
 
 // Code colors
-const COLORCODEBG =  "#000000"; //"#0e1111";
+const COLORCODEBG = "#ffffff"; //"#0e1111";
 const COLORDEFAULT = "#F4FDFF";
 const COLORCSHARP = "#FCB900";
 const COLORPOWERSHELL = "#8ED1FC";
@@ -207,6 +207,19 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         divTitleClass = "account_standard_title_large";
     }
 
+    // Formated text
+    if(view == "search"){
+        // Short text
+        formatedContent = '<div class="account_standard_description_short">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
+    } else if(view == "tag"){
+        // Medium text
+        formatedContent = '<div class="account_standard_description_medium">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
+    } else {
+        // Rich text
+        formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor) + '</div>';
+    }
+
+    // Body
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
          divHeaderBackground +
