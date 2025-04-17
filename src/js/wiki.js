@@ -409,7 +409,10 @@ function replaceRobogatorPlaceholdersWithEllipsis(text) {
     // Replace string
     const replaceString = ' ... ';
 
-    // Remove ROBOCODE/IMAGE if at the end (possibly followed by whitespace)
+     // Remove ROBO+ if at the start (possibly followed by whitespace)
+     text = text.replace(/^((ROBOCODE\d+|ROBOIMAGE\d+|ROBONAVIGATION\w+|ROBOBUTTON\w+|ROBOMASTER)\s*)+/, '');
+
+    // Remove ROBO+ if at the end (possibly followed by whitespace)
     text = text.replace(/((ROBOCODE\d+|ROBOIMAGE\d+|ROBONAVIGATION\w+|ROBOBUTTON\w+|ROBOMASTER)\s*)+$/, '');
     
     // Replace ROBOCODE/IMAGE everywhere else with ...
@@ -462,7 +465,13 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color) {
 
     // Formatting master
     if(licenseType == 0){
-        text = text.replace(/ROBOMASTER/g, '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license');
+        
+        // At the start
+        text = text.replace(/^ROBOCODE\d+/, '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license.<div class="new"></div>');
+
+        // Any where else
+        text = text.replace(/ROBOMASTER/g, '<div class="new"></div><div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This is only available with a Master Plan license.');
+
     } else {
         text = text.replace(/ROBOMASTER/g, '');
     }
