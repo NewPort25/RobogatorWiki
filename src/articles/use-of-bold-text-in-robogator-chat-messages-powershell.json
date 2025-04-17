@@ -2,7 +2,7 @@
   "Title":"Use of bold text in Robogator Chat messages",
   "Topic":"Powershell scripting",
   "Rank":3,
-  "Content":"If you want to highlight a part of a string in bold letters. Just use * at the start and at the end of the part in the Chat message. ROBOCODE0 This example above generates a single Robogator Chat message with Hello World! is bold as content and World! is in bold letters.",
+  "Content":"If you want to highlight a part of a string in bold letters. Just use * at the start and at the end of the part in the Chat message. ROBOCODE0 This example above generates a single Robogator Chat message with Hello World! as content and World! is in bold letters.",
   "Images":["use-of-bold-text-in-robogator-chat-messages-powershell.png"],
   "Code":["Write-Host \"Hello *World!* is bold\""],
   "Date":20250224
