@@ -4,6 +4,6 @@
   "Rank":13,
   "Content":"If you want to be able to use the kill switch to cancel a running C# script at runtime, you may need to manually place the possible cancellation stops in your script. ROBOBUTTONKILL To start, every Chat message creation checks for an ongoing cancellation by default. Further, if you need to be able to cancel long running loops, use the following method if no Chat message will be created during the loop: ROBOCODE0 This allows you to kill a running C# script Task in a well-behaved and traceable way: ROBOIMAGE0 How manual cancellation was used in this example: ROBOCODE1",
   "Images":["how-to-handle-cencellation-in-csharp-scripts.png"],
-  "Code":["Script.CancellationCheck();"],
+  "Code":["Script.CancellationCheck();","using System.Threading;<br><br>Console.WriteLine(\"Long running loop has started\");<br>for (int i = 0; i < 100; i++)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;Script.CancellationCheck();<br>&nbsp;&nbsp;&nbsp;&nbsp;Thread.Sleep(2000);<br>}"],
   "Date":20250224
 }
