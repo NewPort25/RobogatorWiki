@@ -207,33 +207,13 @@ function articleStandard(id,title,topic,content,images,code,date,view){
         divTitleClass = "account_standard_title_large";
     }
 
-    var divFooterPreview = "";
-    if(view == "search"){
-        // Short text
-        formatedContent = '<div class="account_standard_description_short">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
-        divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
-    } else if(view == "tag"){
-        // Medium text
-        formatedContent = '<div class="account_standard_description_medium">' + replaceRobogatorPlaceholdersWithEllipsis(content) + '</div>';
-        divFooterPreview = '<div class="mainTextDisabledColor account_standard_preview">Preview</div>';
-    } else {
-        // Rich text
-        formatedContent = '<div class="account_standard_description_full">' + replaceRobogatorPlaceholdersWithContent(content, images, code, codeColor) + '</div>';
-    }
-
-    // Check share button
-    var divFooterShare = '<div class="account_standard_license"><div class="tag share" onclick="shareAccount(\''+ id + '\')" style="color: ' + styleHighlight + ' ">Share it</div></div>';
-    if(view == "search" || view == "tag") 
-        divFooterShare = "";
-
     var html =
       '<div idKey="' + id + '" class="mainColor mainTextColor account_standard_container" onclick="loadFullDescription(\'' + id + '\')">' + 
          divHeaderBackground +
          '<div class="' + divTitleClass  + '">' + title + '</div>' +
          formatedContent +
          '<div class="account_standard_tags">' + formatedTopic  + '</div>' +
-         divFooterShare +
-         divFooterPreview +
+         '<div class="mainTextDisabledColor account_standard_preview">Preview</div>' +
       '</div>';
     return html;
 }
