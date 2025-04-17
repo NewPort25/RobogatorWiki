@@ -482,7 +482,7 @@ function replaceRobogatorPlaceholdersWithContent(text, images, code, color, type
     });
 
     // Formatting master
-    const masterMessage = '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This feature is only available with a Master Plan license.' + buy;
+    const masterMessage = '<div class="tag_license_image">' + svgLogoExecutive(styleHighlight,20,20) + '</div>This feature is only available with a Master Plan license.';
     var masterBuyLink = ' <a href="https://license.robogator.io" target="_blank" class="robogatorLink" style="color:' + styleHighlight + '">Become a master now</a>';
     
     if(licenseType > 0)
