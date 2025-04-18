@@ -139,7 +139,6 @@ if(licenseType == 1){
     setFaviconFromSVG(svgLogoExecutive(styleHighlight,128,128));
     document.getElementById("footer").innerHTML = svgLogoExecutive(styleHighlight,256,256);
     document.getElementById("footerDescription").innerHTML = svgLogoExecutive(styleHighlight,256,256);
-    document.title += " for Masters";
     document.getElementById("icon").innerHTML = svgLogoExecutive(styleHighlight,30,30);
     document.getElementById("logo").innerHTML = svgLogoExecutive(styleHighlight,512,512);
 }
@@ -148,7 +147,6 @@ if(licenseType == 0){
     setFaviconFromSVG(svgLogo(styleHighlight,128,128));
     document.getElementById("footer").innerHTML = svgLogo(styleHighlight,256,256);
     document.getElementById("footerDescription").innerHTML = svgLogo(styleHighlight,256,256);
-    document.title += " for Beginners";
     document.getElementById("icon").innerHTML = svgLogo(styleHighlight,30,30);
     document.getElementById("logo").innerHTML = svgLogo(styleHighlight,512,512);
 }
